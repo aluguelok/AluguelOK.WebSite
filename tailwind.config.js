@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./artigos/**/*.html", "./ferramentas/**/*.html"],
+  content: [
+    "./index.html",
+    "./lp/**/*.html",
+    "./js/**/*.js",
+    "./artigos/**/*.html",
+    "./ferramentas/**/*.html",
+    "./parceiros/**/*.js"
+  ],
   darkMode: ["selector", "[data-web-theme=dark]"],
   theme: {
     container: {

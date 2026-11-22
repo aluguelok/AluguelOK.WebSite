@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="unsafe-url" />
+  <meta name="aluguelok-variant" content="C" />
+
+  <title>AluguelOK | Auditoria de Contratos Sob Medida para Inquilinos e Proprietários</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="description" content="Escolha se você é Inquilino ou Proprietário e audite seu contrato de aluguel com IA em segundos. Pré-análise gratuita, selo de nota e cálculo financeiro." />
+  <link rel="canonical" href="https://www.aluguelok.com.br/" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png" />
+  <link rel="manifest" href="../favicon/site.webmanifest" />
+  <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+  <link rel="stylesheet" href="../css/main.css" />
+
+  <style data-variant-style>
+    .lp-c-hero-bg {
+      background: linear-gradient(135deg, #0b3bb7 0%, #0d6efd 55%, #1d4ed8 100%);
+    }
+    .lp-c-persona-btn.is-selected {
+      background-color: #ffffff;
+      color: #0d6efd;
+      box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.28);
+    }
+    .lp-c-persona-btn:not(.is-selected) {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  </style>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y18bdk5t96");
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
+
+  <!-- Navbar -->
+  <header class="ic-navbar fixed left-0 top-0 z-50 flex w-full items-center bg-primary/95 backdrop-blur-md border-b border-white/15" role="banner">
+    <div class="container">
+      <div class="ic-navbar-container relative -mx-5 flex items-center justify-between py-2">
+        <div class="w-48 lg:w-52 max-w-full px-5">
+          <a href="#home" class="ic-navbar-logo block py-2">
+            <img src="../img/logo/aluguelok-white.png" width="180" alt="AluguelOK" />
+          </a>
+        </div>
+
+        <div class="flex w-full items-center justify-end gap-4 px-5">
+          <nav id="navbarMenu" class="ic-navbar-collapse absolute right-4 top-[72px] hidden w-full max-w-[260px] rounded-xl bg-white p-5 shadow-xl lg:static lg:block lg:w-auto lg:max-w-full lg:bg-transparent lg:p-0 lg:shadow-none">
+            <ul class="block lg:flex lg:items-center lg:gap-7 text-sm font-semibold text-slate-800 lg:text-white">
+              <li><a href="#riscos-perfil" class="ic-page-scroll block py-2 hover:opacity-80">Seu Perfil</a></li>
+              <li><a href="#bento-relatorio" class="ic-page-scroll block py-2 hover:opacity-80">Relatório Completo</a></li>
+              <li><a href="#planos" class="ic-page-scroll block py-2 hover:opacity-80">Planos</a></li>
+              <li><a href="../artigos/index.html" class="block py-2 hover:opacity-80">Artigos</a></li>
+              <li><a href="../ferramentas/index.html" class="block py-2 hover:opacity-80">Calculadoras</a></li>
+            </ul>
+          </nav>
+
+          <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/25 text-white text-lg" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
+
+          <a href="#" id="lpC-nav-cta" data-cta="nav" data-profile="Inquilino" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-extrabold text-primary shadow-sm hover:bg-blue-50 transition">
+            Começar Grátis
+          </a>
+
+          <button type="button" class="ic-navbar-toggler rounded-lg border border-white/25 px-2.5 py-1.5 text-xl text-white lg:hidden" data-web-toggle="navbar-collapse" data-web-target="navbarMenu" aria-expanded="false" aria-label="Abrir menu">
+            <i class="lni lni-menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main relative">
+    <!-- HERO GUIDED PERSONA -->
+    <section id="home" class="lp-c-hero-bg text-white pt-28 pb-16 lg:pt-36 lg:pb-24">
+      <div class="container max-w-5xl text-center">
+        <p class="text-xs font-extrabold uppercase tracking-widest text-blue-200 mb-4">
+          Auditoria Inteligente • Lei do Inquilinato (8.245/91)
+        </p>
+
+        <!-- Seletor de Persona Central -->
+        <div class="inline-flex flex-col sm:flex-row rounded-2xl bg-slate-950/30 p-1.5 border border-white/20 mb-8">
+          <button type="button" id="lpC-btn-inq" class="lp-c-persona-btn is-selected rounded-xl px-6 py-3 text-sm font-extrabold transition flex items-center justify-center gap-2">
+            <i class="lni lni-key"></i> Estou Alugando (Sou Inquilino)
+          </button>
+          <button type="button" id="lpC-btn-prop" class="lp-c-persona-btn rounded-xl px-6 py-3 text-sm font-extrabold transition flex items-center justify-center gap-2">
+            <i class="lni lni-home"></i> Vou Alugar Meu Imóvel (Sou Proprietário)
+          </button>
+        </div>
+
+        <h1 id="lpC-hero-title" class="text-3xl sm:text-5xl font-black text-white leading-[1.1] mb-5 max-w-4xl mx-auto">
+          Descubra cláusulas ilegais e taxas abusivas antes de assinar o contrato do seu novo lar.
+        </h1>
+
+        <p id="lpC-hero-sub" class="text-base sm:text-lg text-blue-100 max-w-2xl mx-auto mb-9 leading-relaxed">
+          Envie o arquivo do contrato e nossa IA audita tudo sob a ótica do Inquilino: multa proporcional, reajuste (IGP-M vs. IPCA), pintura na entrega e despesas extraordinárias.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+          <a id="lpC-hero-cta-primary" href="#" data-cta="hero" data-profile="Inquilino"
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-8 py-4 text-base font-black text-slate-950 shadow-xl transition">
+            <i class="lni lni-upload"></i>
+            <span id="lpC-hero-cta-text">Enviar Meu Contrato como Inquilino (Grátis)</span>
+          </a>
+          <a href="#bento-relatorio" class="ic-page-scroll w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 hover:bg-white/25 px-6 py-4 text-sm font-bold text-white border border-white/20 transition">
+            Ver Exemplo do Relatório
+          </a>
+        </div>
+
+        <!-- Mini cards de confiança PLG -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
+          <div class="rounded-xl bg-white/10 border border-white/15 p-4 backdrop-blur-sm">
+            <span class="block text-xs font-extrabold uppercase text-emerald-300">Passo 1 • Dropzone</span>
+            <span class="block text-sm font-bold text-white mt-1">Upload sem cadastro</span>
+            <span class="block text-xs text-blue-100 mt-0.5">PDF, Word ou fotos legíveis</span>
+          </div>
+          <div class="rounded-xl bg-white/10 border border-white/15 p-4 backdrop-blur-sm">
+            <span class="block text-xs font-extrabold uppercase text-emerald-300">Passo 2 • Teaser Grátis</span>
+            <span class="block text-sm font-bold text-white mt-1">Nota (A–E) + Placar</span>
+            <span class="block text-xs text-blue-100 mt-0.5">Veja os riscos e o prejuízo antes</span>
+          </div>
+          <div class="rounded-xl bg-white/10 border border-white/15 p-4 backdrop-blur-sm">
+            <span class="block text-xs font-extrabold uppercase text-emerald-300">Passo 3 • Dossiê</span>
+            <span class="block text-sm font-bold text-white mt-1">11 Módulos Completos</span>
+            <span class="block text-xs text-blue-100 mt-0.5">Login Google/e-mail só no desbloqueio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RISCOS ESPECÍFICOS DO PERFIL SELECIONADO -->
+    <section id="riscos-perfil" class="py-16 lg:py-20 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+      <div class="container max-w-5xl">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <span id="lpC-risk-kicker" class="text-xs font-extrabold uppercase tracking-widest text-primary">Foco no Inquilino</span>
+            <h2 id="lpC-risk-heading" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+              O que costumamos flagrar para quem vai alugar
+            </h2>
+          </div>
+          <button type="button" id="lpC-switch-inline" class="self-start md:self-auto rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-primary">
+            Alternar para visão do Proprietário →
+          </button>
+        </div>
+
+        <div id="lpC-risk-cards" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Preenchido via JS conforme perfil -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BENTO GRID DOS 11 MÓDULOS DO RELATÓRIO -->
+    <section id="bento-relatorio" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-950">
+      <div class="container max-w-6xl">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-primary">Relatório Final Completo</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            Seu guia completo durante toda a vigência da locação
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Bloco 1: Cabeçalho, Resumo & Termômetro -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 p-7 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="rounded-lg bg-primary/10 text-primary px-3 py-1 text-xs font-extrabold">Executivo</span>
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-emerald-500 font-black text-emerald-600">A</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Cabeçalho + Selo + Resumo</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Metadados completos (locador, locatário, imóvel, vigência), exportação e parágrafo introdutório traduzindo o contrato.</p>
+            </div>
+            <div class="rounded-xl bg-slate-50 dark:bg-slate-800 p-4">
+              <div class="flex justify-between text-xs font-bold mb-1.5">
+                <span>Termômetro de Equilíbrio</span>
+                <span class="text-emerald-600">50% / 50%</span>
+              </div>
+              <div class="h-2.5 w-full rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden flex">
+                <div class="h-full bg-primary w-1/2"></div>
+                <div class="h-full bg-emerald-500 w-1/2"></div>
+              </div>
+            </div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 pt-1">
+              <strong>+ Pontos de Atenção:</strong> Ilegalidades, Abusividades, Injustiças e Ausências.
+            </div>
+          </div>
+
+          <!-- Bloco 2: Financeiro, 4 Índices & Caução -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 p-7 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="rounded-lg bg-emerald-500/10 text-emerald-600 px-3 py-1 text-xs font-extrabold">Financeiro</span>
+              <span class="text-xs font-extrabold text-red-600">Impacto Anual</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Condições, Reajustes & Garantia</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Custo mensal real (aluguel + encargos + taxas extras), projeção de 12 meses e rendimento da caução na devolução.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-xs">
+              <div class="rounded-lg bg-slate-50 dark:bg-slate-800 p-2.5 border border-slate-200 dark:border-slate-700">
+                <span class="block text-slate-400">IGP-M (Contrato)</span>
+                <strong class="text-slate-900 dark:text-white">Projeção 12m</strong>
+              </div>
+              <div class="rounded-lg bg-emerald-50 dark:bg-emerald-950/30 p-2.5 border border-emerald-200 dark:border-emerald-900">
+                <span class="block text-emerald-700 dark:text-emerald-400">IPCA / INPC / IPC-Fipe</span>
+                <strong class="text-emerald-700 dark:text-emerald-300">Comparativo</strong>
+              </div>
+            </div>
+            <div class="rounded-xl bg-red-50 dark:bg-red-950/30 p-3 text-xs text-red-700 dark:text-red-300 font-semibold">
+              Destaque automático de Prejuízo Potencial (ex.: R$ 697,50/ano) + pontos de negociação.
+            </div>
+          </div>
+
+          <!-- Bloco 3: Rescisão, Responsabilidades & Vistoria -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 p-7 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="rounded-lg bg-sky-500/10 text-sky-600 px-3 py-1 text-xs font-extrabold">Vigência & Saída</span>
+              <span class="text-xs font-bold text-slate-400">Prático</span>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">Saída Antecipada, Deveres & Vistoria</h3>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Simulador de multa proporcional por marco temporal + tabela de responsabilidades e guia de entrega de chaves.</p>
+            </div>
+            <div class="space-y-2 text-xs">
+              <div class="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+                <span class="text-slate-500">Reparos estruturais</span>
+                <strong class="text-slate-900 dark:text-white">Proprietário</strong>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-100 dark:border-slate-800">
+                <span class="text-slate-500">Manutenção de uso</span>
+                <strong class="text-slate-900 dark:text-white">Inquilino</strong>
+              </div>
+              <div class="flex justify-between py-1.5">
+                <span class="text-slate-500">Pintura / IPTU / Multas</span>
+                <strong class="text-primary">Extraído do texto</strong>
+              </div>
+            </div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">
+              <strong>+ Guia de Vistoria:</strong> Checklist separado para Entrada e Saída.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS -->
+    <section id="planos" class="py-16 lg:py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+      <div class="container max-w-5xl">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">3 Planos Diretos. Comece pela Pré-Análise Grátis.</h2>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Precisou de mais detalhes depois? Faça upgrade pagando apenas a diferença entre os planos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-7 flex flex-col">
+            <h3 class="font-extrabold text-lg">Compacta</h3>
+            <p class="text-3xl font-black mt-2">R$ 39,99</p>
+            <span class="text-xs text-slate-500 mb-5">30 dias de acesso</span>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Score geral, resumo simplificado e ilegalidades encontradas.</p>
+            <a href="#" data-cta="plan_compacta" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl border border-primary py-3 text-sm font-bold text-primary hover:bg-primary hover:text-white transition">Testar Grátis</a>
+          </div>
+          <div class="rounded-2xl border-2 border-primary bg-blue-50/40 dark:bg-slate-950 p-7 shadow-lg flex flex-col">
+            <span class="text-[11px] font-extrabold uppercase text-primary mb-1">Recomendada</span>
+            <h3 class="font-extrabold text-lg text-primary">Essencial</h3>
+            <p class="text-3xl font-black mt-1">R$ 69,99</p>
+            <span class="text-xs text-emerald-600 font-semibold mb-5">90 dias de acesso</span>
+            <p class="text-sm text-slate-700 dark:text-slate-300 mb-6 flex-grow">Tudo da Compacta + Equilíbrio, Condições Financeiras, 4 Índices, Injustiças e Prejuízo Potencial.</p>
+            <a href="#" data-cta="plan_essencial" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl bg-primary py-3 text-sm font-extrabold text-white hover:bg-primary-light-10 transition">Auditar Agora</a>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-7 flex flex-col">
+            <h3 class="font-extrabold text-lg">Completa</h3>
+            <p class="text-3xl font-black mt-2">R$ 189,99</p>
+            <span class="text-xs text-slate-500 mb-5">360 dias de acesso</span>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Visão 360º: Contradições, Ausências, Simulador de Saída, Responsabilidades e Guia de Vistoria.</p>
+            <a href="#" data-cta="plan_completa" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl bg-slate-900 dark:bg-white py-3 text-sm font-extrabold text-white dark:text-slate-900 transition">Auditoria 360º</a>
+          </div>
+        </div>
+
+        <!-- Cross-link para Ferramentas & Artigos -->
+        <div class="mt-14 rounded-2xl bg-slate-100 dark:bg-slate-800/60 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Quer calcular só um valor pontual antes?</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">Use gratuitamente nossas calculadoras oficiais (BCB) de multa rescisória, reajuste, caução e recibo em PDF.</p>
+          </div>
+          <div class="flex flex-wrap gap-3 shrink-0">
+            <a href="../ferramentas/index.html" class="rounded-xl bg-white dark:bg-slate-900 px-5 py-3 text-sm font-bold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary">Abrir Calculadoras</a>
+            <a href="../artigos/index.html" class="rounded-xl bg-white dark:bg-slate-900 px-5 py-3 text-sm font-bold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary">Ler Guias Práticos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 border-t border-slate-800">
+    <div class="container py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <img src="../img/logo/aluguelok-white.png" width="160" alt="Logo AluguelOK" />
+        <div class="flex flex-wrap justify-center gap-6 text-sm">
+          <a href="../artigos/index.html" class="hover:text-white">Artigos</a>
+          <a href="../ferramentas/index.html" class="hover:text-white">Calculadoras</a>
+          <a href="#" data-cta="footer_policy" data-profile="Policy" class="hover:text-white">Política de Privacidade</a>
+          <a href="#" data-cta="footer_help" data-profile="Help" class="hover:text-white">Central de Ajuda</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-2">
+        <span>© 2026 AluguelOK. Análise jurídica e financeira com IA.</span>
+        <span>power of <a href="https://kh4os.io/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">kh4os.io</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="inline-flex w-11 h-11 rounded-xl items-center justify-center text-lg bg-primary text-white shadow-lg fixed bottom-6 right-6 z-40 is-hided" data-web-trigger="scroll-top" aria-label="Voltar ao topo">
+    <i class="lni lni-chevron-up"></i>
+  </button>
+
+  <script src="../js/main.js"></script>
+  <script data-variant-script>
+    (function () {
+      var content = {
+        Inquilino: {
+          title: "Descubra cláusulas ilegais e taxas abusivas antes de assinar o contrato do seu novo lar.",
+          sub: "Envie o arquivo do contrato e nossa IA audita tudo sob a ótica do Inquilino: multa proporcional, reajuste (IGP-M vs. IPCA), pintura na entrega e despesas extraordinárias.",
+          ctaText: "Enviar Meu Contrato como Inquilino (Grátis)",
+          kicker: "Foco no Inquilino",
+          heading: "O que costumamos flagrar para quem vai alugar",
+          switchLabel: "Alternar para visão do Proprietário →",
+          cards: [
+            { tag: "Ilegalidade Comum", title: "Despesas extraordinárias no seu boleto", desc: "Identificamos quando o contrato tenta repassar reformas estruturais, pintura de fachada ou fundo de reserva que pertencem ao dono." },
+            { tag: "Impacto Financeiro", title: "Índice de reajuste desvantajoso", desc: "Comparamos IGP-M, IPCA, IPC-Fipe e INPC e calculamos quanto você economiza por ano ao negociar a troca do índice." },
+            { tag: "Saída Antecipada", title: "Multa rescisória sem proporcionalidade", desc: "Simulamos a multa correta proporcional ao tempo restante e verificamos a cláusula de isenção após 12 meses." },
+            { tag: "Vistoria & Garantia", title: "Pintura nova e devolução da caução", desc: "Mostramos exigências abusivas na devolução das chaves e projetamos quanto sua caução deve render até o fim." }
+          ]
+        },
+        Proprietario: {
+          title: "Proteja seu imóvel contra lacunas contratuais e garantias frágeis antes de entregar as chaves.",
+          sub: "Envie sua minuta e nossa IA audita tudo sob a ótica do Proprietário: solidez da garantia, prazos de desocupação, benfeitorias, multas e responsabilidades claras.",
+          ctaText: "Enviar Minha Minuta como Proprietário (Grátis)",
+          kicker: "Foco no Proprietário",
+          heading: "O que blindamos para quem coloca o imóvel para alugar",
+          switchLabel: "Alternar para visão do Inquilino →",
+          cards: [
+            { tag: "Ausência Crítica", title: "Vistoria e estado de devolução vagos", desc: "Detectamos omissões sobre estado de conservação, pintura e prazo de reparos ao final do contrato que geram prejuízo na entrega." },
+            { tag: "Proteção Patrimonial", title: "Garantia locatícia subdimensionada", desc: "Avaliamos caução, seguro fiança ou fiador e apontamos brechas que dificultam a execução de débitos e encargos." },
+            { tag: "Benfeitorias & Obras", title: "Reformas sem regra de indenização", desc: "Verificamos cláusulas sobre benfeitorias necessárias, úteis e voluptuárias para evitar pedidos de abatimento no aluguel." },
+            { tag: "Equilíbrio Contratual", title: "Cláusulas anuláveis na Justiça", desc: "Alertamos sobre termos que podem ser derrubados por ilegalidade, garantindo um contrato sólido, justo e executável." }
+          ]
+        }
+      };
+
+      var currentPersona = "Inquilino";
+      var btnInq = document.getElementById("lpC-btn-inq");
+      var btnProp = document.getElementById("lpC-btn-prop");
+      var switchInline = document.getElementById("lpC-switch-inline");
+
+      function renderPersona(p) {
+        currentPersona = p;
+        var d = content[p];
+        if (btnInq) btnInq.classList.toggle("is-selected", p === "Inquilino");
+        if (btnProp) btnProp.classList.toggle("is-selected", p === "Proprietario");
+
+        var title = document.getElementById("lpC-hero-title");
+        var sub = document.getElementById("lpC-hero-sub");
+        var ctaText = document.getElementById("lpC-hero-cta-text");
+        var kicker = document.getElementById("lpC-risk-kicker");
+        var heading = document.getElementById("lpC-risk-heading");
+        var cardsEl = document.getElementById("lpC-risk-cards");
+
+        if (title) title.textContent = d.title;
+        if (sub) sub.textContent = d.sub;
+        if (ctaText) ctaText.textContent = d.ctaText;
+        if (kicker) kicker.textContent = d.kicker;
+        if (heading) heading.textContent = d.heading;
+        if (switchInline) switchInline.textContent = d.switchLabel;
+
+        if (cardsEl) {
+          cardsEl.innerHTML = d.cards
+            .map(function (c) {
+              return (
+                '<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-6">' +
+                '<span class="inline-block text-[11px] font-extrabold uppercase tracking-wider text-primary mb-2">' + c.tag + "</span>" +
+                '<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">' + c.title + "</h3>" +
+                '<p class="text-sm text-slate-600 dark:text-slate-400">' + c.desc + "</p>" +
+                "</div>"
+              );
+            })
+            .join("");
+        }
+
+        // Atualiza data-profile de todos os CTAs dinâmicos
+        var primary = document.getElementById("lpC-hero-cta-primary");
+        var navCta = document.getElementById("lpC-nav-cta");
+        if (primary) primary.setAttribute("data-profile", p);
+        if (navCta) navCta.setAttribute("data-profile", p);
+        document.querySelectorAll(".lpC-dynamic-cta").forEach(function (el) {
+          el.setAttribute("data-profile", p);
+        });
+        if (window.AluguelOKAB) {
+          window.AluguelOKAB.bindCTAs(window.AluguelOKAB.getVariant());
+        }
+      }
+
+      if (btnInq) btnInq.addEventListener("click", function () { renderPersona("Inquilino"); });
+      if (btnProp) btnProp.addEventListener("click", function () { renderPersona("Proprietario"); });
+      if (switchInline) {
+        switchInline.addEventListener("click", function () {
+          renderPersona(currentPersona === "Inquilino" ? "Proprietario" : "Inquilino");
+        });
+      }
+
+      renderPersona("Inquilino");
+    })();
+  </script>
+  <script src="../js/ab-router.js"></script>
+</body>
+</html>

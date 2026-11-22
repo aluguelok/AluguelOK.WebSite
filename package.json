@@ -6,7 +6,8 @@
     "tw-install": "npm install -D tailwindcss",
     "tw-init": "npx tailwindcss init",
     "tw-build": "npx tailwindcss -i ./css/tailwind.css -o ./css/main.css --watch",
-    "tw-minify": "npx tailwindcss -o ./css/main.min.css --minify"
+    "tw-prod": "npx tailwindcss -i ./css/tailwind.css -o ./css/main.css --minify",
+    "tw-minify": "npx tailwindcss -i ./css/tailwind.css -o ./css/main.min.css --minify"
   },
   "keywords": [
     "company",
