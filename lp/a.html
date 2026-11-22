@@ -41,15 +41,6 @@
       color: #ffffff;
       box-shadow: 0 8px 20px -4px rgba(13, 110, 253, 0.35);
     }
-    .lp-a-profile-pill.is-active {
-      border-color: #0d6efd;
-      background-color: rgba(13, 110, 253, 0.08);
-      color: #0d6efd;
-    }
-    [data-web-theme="dark"] .lp-a-profile-pill.is-active {
-      background-color: rgba(13, 110, 253, 0.22);
-      color: #93c5fd;
-    }
   </style>
 
   <!-- Microsoft Clarity -->
@@ -64,13 +55,13 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
 
   <!-- Navbar -->
-  <header class="ic-navbar fixed left-0 top-0 z-50 flex w-full items-center bg-white/85 dark:bg-slate-950/85 backdrop-blur-md border-b border-slate-200/70 dark:border-slate-800/80" role="banner">
+  <header class="ic-navbar ic-navbar-custom fixed left-0 top-0 z-50 flex w-full items-center bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80" role="banner">
     <div class="container">
       <div class="ic-navbar-container relative -mx-5 flex items-center justify-between py-2">
         <div class="w-48 lg:w-52 max-w-full px-5">
           <a href="#home" class="ic-navbar-logo block py-2">
-            <img src="../img/logo/aluguelok-blue.png" width="180" alt="AluguelOK" class="dark:hidden" />
-            <img src="../img/logo/aluguelok-white.png" width="180" alt="AluguelOK" class="hidden dark:block" />
+            <img src="../img/logo/aluguelok-blue.png" width="176" alt="AluguelOK" class="dark:hidden" />
+            <img src="../img/logo/aluguelok-white.png" width="176" alt="AluguelOK" class="hidden dark:block" />
           </a>
         </div>
 
@@ -79,6 +70,7 @@
             <ul class="block lg:flex lg:items-center lg:gap-7 text-sm font-semibold">
               <li><a href="#como-funciona" class="ic-page-scroll block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Como Funciona</a></li>
               <li><a href="#relatorio" class="ic-page-scroll block py-2 text-slate-700 hover:text-primary dark:text-slate-200">O Relatório</a></li>
+              <li><a href="#pre-analise" class="ic-page-scroll block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Pré-Análise Grátis</a></li>
               <li><a href="#planos" class="ic-page-scroll block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Planos</a></li>
               <li><a href="../artigos/index.html" class="block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Artigos</a></li>
               <li><a href="../ferramentas/index.html" class="block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Calculadoras</a></li>
@@ -90,7 +82,7 @@
 
           <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-lg" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
 
-          <a href="#" data-cta="nav" data-profile="" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-light-10 transition">
+          <a href="#" data-cta="nav" data-profile="" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-light-10 transition whitespace-nowrap">
             <i class="lni lni-upload"></i> Enviar Contrato
           </a>
 
@@ -103,8 +95,8 @@
   </header>
 
   <main class="main relative pt-20">
-    <!-- HERO: Product-First + Preview Interativo -->
-    <section id="home" class="lp-a-grid-bg relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-slate-200/80 dark:border-slate-800">
+    <!-- HERO: Product-First + Vídeo Explicativo do Processo -->
+    <section id="home" class="lp-custom-hero lp-a-grid-bg relative overflow-hidden pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-slate-200/80 dark:border-slate-800">
       <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
@@ -115,7 +107,7 @@
               LegalTech IA • Auditoria de Contratos de Aluguel
             </div>
 
-            <h1 class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-5">
+            <h1 class="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-5">
               Audite seu contrato de aluguel em segundos antes de assinar no escuro.
             </h1>
 
@@ -123,137 +115,92 @@
               Nossa IA traduz o juridiquês, aponta <strong>cláusulas ilegais</strong>, mede o <strong>equilíbrio entre as partes</strong> e calcula o <strong>prejuízo financeiro escondido</strong>. Faça o upload e receba sua <strong>Pré-Análise gratuita</strong> sem precisar cadastrar cartão.
             </p>
 
-            <!-- Seletor Interativo para adaptar o preview + CTAs -->
+            <!-- Segmentação direta -->
             <div class="mb-5">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5">
-                1. Selecione seu lado na negociação para começar:
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+                Escolha seu perfil e comece sua Pré-Análise Gratuita:
               </p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <a href="#" data-cta="hero" data-profile="Inquilino" data-preview-trigger="Inquilino"
-                   class="lp-a-profile-pill is-active group flex items-center justify-between rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 shadow-sm hover:border-primary transition-all">
-                  <div class="flex items-center gap-3.5">
-                    <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-white text-xl shadow-sm">
-                      <i class="lni lni-key"></i>
-                    </div>
-                    <div class="text-left">
-                      <span class="block text-base font-extrabold text-slate-900 dark:text-white group-hover:text-primary">Sou Inquilino</span>
-                      <span class="block text-xs text-slate-500 dark:text-slate-400">Evite multas e cobranças abusivas</span>
-                    </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <a href="#" data-cta="hero" data-profile="Inquilino"
+                   class="group flex items-center gap-3.5 rounded-xl border-2 border-primary bg-white dark:bg-slate-900 p-4 shadow-sm hover:bg-blue-50/50 dark:hover:bg-slate-800 transition-all">
+                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-white text-xl shadow-sm">
+                    <i class="lni lni-key"></i>
                   </div>
-                  <i class="lni lni-arrow-right text-lg text-primary"></i>
+                  <div class="min-w-0 flex-1 text-left">
+                    <span class="block text-base font-extrabold text-slate-900 dark:text-white group-hover:text-primary">Sou Inquilino</span>
+                    <span class="block text-xs text-slate-500 dark:text-slate-400">Evite multas e taxas abusivas</span>
+                  </div>
+                  <i class="lni lni-arrow-right text-lg text-primary shrink-0"></i>
                 </a>
 
-                <a href="#" data-cta="hero" data-profile="Proprietario" data-preview-trigger="Proprietario"
-                   class="lp-a-profile-pill group flex items-center justify-between rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-4 shadow-sm hover:border-primary transition-all">
-                  <div class="flex items-center gap-3.5">
-                    <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-xl shadow-sm">
-                      <i class="lni lni-home"></i>
-                    </div>
-                    <div class="text-left">
-                      <span class="block text-base font-extrabold text-slate-900 dark:text-white group-hover:text-primary">Sou Proprietário</span>
-                      <span class="block text-xs text-slate-500 dark:text-slate-400">Blinde seu patrimônio e garantias</span>
-                    </div>
+                <a href="#" data-cta="hero" data-profile="Proprietario"
+                   class="group flex items-center gap-3.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-4 shadow-sm hover:border-primary transition-all">
+                  <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-900 dark:bg-slate-700 text-white text-xl shadow-sm">
+                    <i class="lni lni-home"></i>
                   </div>
-                  <i class="lni lni-arrow-right text-lg text-slate-400 group-hover:text-primary"></i>
+                  <div class="min-w-0 flex-1 text-left">
+                    <span class="block text-base font-extrabold text-slate-900 dark:text-white group-hover:text-primary">Sou Proprietário</span>
+                    <span class="block text-xs text-slate-500 dark:text-slate-400">Blinde patrimônio e garantias</span>
+                  </div>
+                  <i class="lni lni-arrow-right text-lg text-slate-400 group-hover:text-primary shrink-0"></i>
                 </a>
               </div>
             </div>
 
             <!-- Barra de Trust / Zero Atrito -->
-            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 pt-2">
+            <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 pt-2">
               <span class="inline-flex items-center gap-1.5"><i class="lni lni-checkmark-circle text-emerald-500 font-bold"></i> Pré-análise 100% grátis sem login</span>
               <span class="inline-flex items-center gap-1.5"><i class="lni lni-shield text-primary font-bold"></i> Arquivos excluídos após leitura (LGPD)</span>
               <span class="inline-flex items-center gap-1.5"><i class="lni lni-files text-primary font-bold"></i> PDF, DOC, DOCX e fotos</span>
             </div>
           </div>
 
-          <!-- Coluna Direita: Mockup Vivo da Pré-Análise & Diagnóstico -->
+          <!-- Coluna Direita: Vídeo Explicativo do Processo Completo -->
           <div class="lg:col-span-6">
             <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden">
-              <!-- Barra superior do mockup -->
+              <!-- Barra superior -->
               <div class="flex items-center justify-between px-5 py-3.5 bg-slate-900 text-white">
                 <div class="flex items-center gap-2 text-xs font-semibold">
                   <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-                  <span>Exemplo de Pré-Análise Gratuita</span>
+                  <span>Veja como funciona todo o processo em 60s</span>
                 </div>
-                <div class="flex items-center gap-1.5 bg-slate-800 rounded-lg p-1 text-[11px] font-bold">
-                  <button type="button" id="lpA-sim-inq" class="px-2.5 py-1 rounded-md bg-primary text-white">Visão Inquilino</button>
-                  <button type="button" id="lpA-sim-prop" class="px-2.5 py-1 rounded-md text-slate-300 hover:text-white">Visão Proprietário</button>
+                <span class="rounded-md bg-white/10 px-2.5 py-1 text-[11px] font-bold text-blue-200">Passo a Passo</span>
+              </div>
+
+              <!-- Player Lazy-Load -->
+              <div id="lpA-video-box" class="relative aspect-video w-full bg-slate-950 overflow-hidden">
+                <img src="../img/intro-video.jpg" alt="Demonstração do processo de auditoria de contratos da AluguelOK" class="w-full h-full object-cover opacity-80" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/35 to-transparent flex flex-col items-center justify-center p-6 text-center">
+                  <button type="button" id="lpA-play-video"
+                          class="group mb-4 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-primary text-white shadow-2xl ring-8 ring-white/20 hover:scale-105 hover:bg-emerald-500 transition-all"
+                          aria-label="Reproduzir vídeo explicativo de como funciona a AluguelOK">
+                    <i class="lni lni-play text-2xl sm:text-3xl ml-1"></i>
+                  </button>
+                  <p class="text-sm sm:text-base font-extrabold text-white">Assista: Do Upload à Pré-Análise Grátis e Relatório Final</p>
+                  <p class="text-xs text-slate-300 mt-1">Entenda como a IA audita cláusulas, calcula riscos e traduz o juridiquês</p>
                 </div>
               </div>
 
-              <div class="p-6 sm:p-7 space-y-5">
-                <!-- Linha 1: Selo + Prejuízo -->
-                <div class="flex flex-col sm:flex-row items-center justify-between gap-5 pb-5 border-b border-slate-100 dark:border-slate-800">
-                  <div class="flex items-center gap-4">
-                    <div id="lpA-score-ring" class="flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-[6px] border-amber-400 bg-amber-50 dark:bg-amber-950/30">
-                      <span id="lpA-score-letter" class="text-3xl font-black text-amber-600 dark:text-amber-400">C</span>
-                    </div>
-                    <div>
-                      <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Selo do Contrato</span>
-                      <h3 id="lpA-score-title" class="text-lg font-extrabold text-slate-900 dark:text-white">Atenção Recomendada</h3>
-                      <p id="lpA-score-sub" class="text-xs text-slate-500 dark:text-slate-400">Contrato desequilibrado contra o Inquilino</p>
-                    </div>
+              <!-- Resumo visual abaixo do vídeo -->
+              <div class="p-5 bg-slate-50 dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800">
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center text-xs">
+                  <div class="rounded-xl bg-white dark:bg-slate-800 p-2.5 border border-slate-200/80 dark:border-slate-700">
+                    <span class="block font-extrabold text-primary">1. Upload</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400">PDF/Word/Foto</span>
                   </div>
-                  <div class="w-full sm:w-auto rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/60 px-4 py-3 text-center sm:text-right">
-                    <span class="block text-[11px] font-bold uppercase text-red-600 dark:text-red-400">Prejuízo Potencial</span>
-                    <span id="lpA-loss-value" class="text-2xl font-black text-red-600 dark:text-red-400">R$ 697,50/ano</span>
+                  <div class="rounded-xl bg-white dark:bg-slate-800 p-2.5 border border-slate-200/80 dark:border-slate-700">
+                    <span class="block font-extrabold text-primary">2. Leitura IA</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400">Em segundos</span>
                   </div>
-                </div>
-
-                <!-- Termômetro de Equilíbrio -->
-                <div>
-                  <div class="flex justify-between text-xs font-bold mb-1.5">
-                    <span id="lpA-bal-left" class="text-slate-700 dark:text-slate-300">Proprietário: 66% das vantagens</span>
-                    <span id="lpA-bal-right" class="text-primary">Inquilino: 34%</span>
+                  <div class="rounded-xl bg-emerald-50 dark:bg-emerald-950/40 p-2.5 border border-emerald-200 dark:border-emerald-800">
+                    <span class="block font-extrabold text-emerald-700 dark:text-emerald-400">3. Pré-Análise</span>
+                    <span class="text-[11px] text-emerald-600 dark:text-emerald-300">100% Grátis</span>
                   </div>
-                  <div class="h-3 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden flex">
-                    <div id="lpA-bal-bar" class="h-full bg-slate-800 dark:bg-slate-400 transition-all duration-500" style="width: 66%;"></div>
-                    <div class="h-full bg-primary flex-1"></div>
+                  <div class="rounded-xl bg-white dark:bg-slate-800 p-2.5 border border-slate-200/80 dark:border-slate-700">
+                    <span class="block font-extrabold text-slate-900 dark:text-white">4. Relatório</span>
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400">11 módulos</span>
                   </div>
                 </div>
-
-                <!-- Placar de 4 Categorias -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-center">
-                  <div class="rounded-xl bg-red-50 dark:bg-red-950/20 p-3 border border-red-100 dark:border-red-900/40">
-                    <span id="lpA-cnt-ileg" class="block text-xl font-black text-red-600 dark:text-red-400">2</span>
-                    <span class="text-[11px] font-bold text-slate-700 dark:text-slate-300">Ilegalidades</span>
-                  </div>
-                  <div class="rounded-xl bg-amber-50 dark:bg-amber-950/20 p-3 border border-amber-100 dark:border-amber-900/40">
-                    <span id="lpA-cnt-abus" class="block text-xl font-black text-amber-600 dark:text-amber-400">3</span>
-                    <span class="text-[11px] font-bold text-slate-700 dark:text-slate-300">Abusividades</span>
-                  </div>
-                  <div class="rounded-xl bg-sky-50 dark:bg-sky-950/20 p-3 border border-sky-100 dark:border-sky-900/40">
-                    <span id="lpA-cnt-inj" class="block text-xl font-black text-sky-600 dark:text-sky-400">2</span>
-                    <span class="text-[11px] font-bold text-slate-700 dark:text-slate-300">Injustiças</span>
-                  </div>
-                  <div class="rounded-xl bg-slate-100 dark:bg-slate-800 p-3 border border-slate-200 dark:border-slate-700">
-                    <span id="lpA-cnt-aus" class="block text-xl font-black text-slate-700 dark:text-slate-200">2</span>
-                    <span class="text-[11px] font-bold text-slate-700 dark:text-slate-300">Ausências</span>
-                  </div>
-                </div>
-
-                <!-- Alerta real contextualizado -->
-                <div class="rounded-xl bg-slate-50 dark:bg-slate-800/70 p-4 border border-slate-200/80 dark:border-slate-700 text-xs sm:text-sm space-y-2">
-                  <div class="flex items-start gap-2.5">
-                    <i class="lni lni-warning text-red-500 text-base mt-0.5 shrink-0"></i>
-                    <p id="lpA-finding-1" class="text-slate-700 dark:text-slate-200">
-                      <strong>Cláusula 8ª (Ilegalidade):</strong> Repassa ao inquilino despesas extraordinárias de condomínio (reforma de fachada), violando o Art. 22 da Lei nº 8.245/91.
-                    </p>
-                  </div>
-                  <div class="flex items-start gap-2.5">
-                    <i class="lni lni-stats-up text-primary text-base mt-0.5 shrink-0"></i>
-                    <p id="lpA-finding-2" class="text-slate-700 dark:text-slate-200">
-                      <strong>Reajuste IGP-M vs. IPCA:</strong> Substituir o índice contratado pode gerar economia estimada de <strong>R$ 697,50</strong> nos próximos 12 meses.
-                    </p>
-                  </div>
-                </div>
-
-                <a id="lpA-mockup-cta" href="#" data-cta="mockup" data-profile="Inquilino"
-                   class="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-5 py-3.5 text-sm font-extrabold text-white shadow-md transition">
-                  <i class="lni lni-search-alt"></i>
-                  <span>Fazer Pré-Análise Grátis do Meu Contrato</span>
-                </a>
               </div>
             </div>
           </div>
@@ -287,12 +234,12 @@
             <p class="text-sm text-slate-600 dark:text-slate-400">Suba PDF, DOC, DOCX ou fotos do documento na dropzone (até 10 arquivos / 50 MB), sem formulário longo nem senha.</p>
           </div>
           <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950 p-6">
-            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-white font-black">03</div>
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-600 text-white font-black">03</div>
             <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Pré-Análise Gratuita</h3>
             <p class="text-sm text-slate-600 dark:text-slate-400">Em segundos, receba a <strong>Nota (A–E)</strong>, o resumo simplificado, a contagem de problemas e o prejuízo anual estimado.</p>
           </div>
           <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950 p-6">
-            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-600 text-white font-black">04</div>
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-slate-900 text-white font-black">04</div>
             <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Relatório Acionável</h3>
             <p class="text-sm text-slate-600 dark:text-slate-400">Faça login rápido (Google/e-mail), escolha seu plano e acesse os 11 módulos completos para negociar e assinar com segurança.</p>
           </div>
@@ -313,7 +260,6 @@
           </p>
         </div>
 
-        <!-- Tabs -->
         <div class="flex flex-wrap justify-center gap-3 mb-10" role="tablist">
           <button type="button" class="lp-a-tab-btn is-active rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-5 py-3 text-sm font-bold transition" data-lp-a-tab="juridico">
             <i class="lni lni-shield mr-1.5"></i> Blindagem Jurídica (4 módulos)
@@ -326,7 +272,6 @@
           </button>
         </div>
 
-        <!-- Painel 1 -->
         <div id="lp-a-panel-juridico" class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="rounded-2xl bg-white dark:bg-slate-900 p-7 border border-slate-200 dark:border-slate-800 shadow-sm">
             <span class="inline-block text-xs font-extrabold text-primary uppercase mb-2">Módulo 01</span>
@@ -350,7 +295,6 @@
           </div>
         </div>
 
-        <!-- Painel 2 -->
         <div id="lp-a-panel-financeiro" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="rounded-2xl bg-white dark:bg-slate-900 p-7 border border-slate-200 dark:border-slate-800 shadow-sm">
             <span class="inline-block text-xs font-extrabold text-emerald-600 uppercase mb-2">Módulo 05</span>
@@ -374,7 +318,6 @@
           </div>
         </div>
 
-        <!-- Painel 3 -->
         <div id="lp-a-panel-operacao" class="hidden grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="rounded-2xl bg-white dark:bg-slate-900 p-7 border border-slate-200 dark:border-slate-800 shadow-sm">
             <span class="inline-block text-xs font-extrabold text-primary uppercase mb-2">Módulo 09</span>
@@ -395,22 +338,107 @@
       </div>
     </section>
 
-    <!-- PLANOS -->
+    <!-- SEÇÃO DEDICADA: PRÉ-ANÁLISE GRATUITA (ANTES DOS PLANOS PAGOS) -->
+    <section id="pre-analise" class="py-16 lg:py-20 bg-emerald-50/70 dark:bg-emerald-950/20 border-b border-emerald-200/80 dark:border-emerald-900/50">
+      <div class="container max-w-5xl">
+        <div class="rounded-3xl bg-white dark:bg-slate-900 border-2 border-emerald-500/40 p-7 sm:p-10 shadow-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-7">
+              <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-3">
+                <i class="lni lni-gift"></i> Etapa Gratuita • Sem Cadastro e Sem Cartão
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-3">
+                O que você já recebe de graça na Pré-Análise antes de escolher um plano
+              </h2>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">
+                Não pedimos pagamento nem cartão no escuro. Assim que você envia o arquivo na dropzone, a IA processa o documento e libera na hora o seu diagnóstico preliminar gratuito:
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm mb-6">
+                <div class="flex items-start gap-2.5">
+                  <i class="lni lni-checkmark-circle text-emerald-600 font-bold mt-0.5"></i>
+                  <span><strong>Selo Geral (A até E):</strong> nota imediata da segurança do contrato.</span>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <i class="lni lni-checkmark-circle text-emerald-600 font-bold mt-0.5"></i>
+                  <span><strong>Placar de Falhas:</strong> quantidade exata de ilegalidades, contradições, injustiças e ausências.</span>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <i class="lni lni-checkmark-circle text-emerald-600 font-bold mt-0.5"></i>
+                  <span><strong>Resumo Simplificado:</strong> visão clara para entender se vale assinar como está.</span>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <i class="lni lni-checkmark-circle text-emerald-600 font-bold mt-0.5"></i>
+                  <span><strong>Prejuízo Potencial (R$):</strong> quanto dinheiro pode estar escondido em risco.</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-3">
+                <a href="#" data-cta="pre_analise" data-profile="Inquilino" class="rounded-xl bg-emerald-600 hover:bg-emerald-700 px-6 py-3 text-sm font-extrabold text-white shadow-sm transition">
+                  Fazer Pré-Análise Grátis (Inquilino)
+                </a>
+                <a href="#" data-cta="pre_analise" data-profile="Proprietario" class="rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 px-6 py-3 text-sm font-extrabold text-white shadow-sm transition">
+                  Fazer Pré-Análise Grátis (Proprietário)
+                </a>
+              </div>
+            </div>
+
+            <!-- Card visual do Teaser Gratuito -->
+            <div class="lg:col-span-5">
+              <div class="rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 space-y-4">
+                <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-14 w-14 items-center justify-center rounded-full border-4 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-2xl font-black text-emerald-600">A</div>
+                    <div>
+                      <span class="block text-[11px] font-bold uppercase text-slate-400">Pré-Análise Grátis</span>
+                      <strong class="text-base text-slate-900 dark:text-white">Selo A até E na hora</strong>
+                    </div>
+                  </div>
+                  <span class="rounded-lg bg-emerald-500/15 px-2.5 py-1 text-xs font-extrabold text-emerald-700 dark:text-emerald-400">R$ 0,00</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2.5 text-center text-xs">
+                  <div class="rounded-lg bg-white dark:bg-slate-900 p-2.5 border border-slate-200 dark:border-slate-800">
+                    <strong class="block text-base text-red-600">Ilegalidades</strong>
+                    <span class="text-slate-500">Contagem exata</span>
+                  </div>
+                  <div class="rounded-lg bg-white dark:bg-slate-900 p-2.5 border border-slate-200 dark:border-slate-800">
+                    <strong class="block text-base text-amber-600">Abusividades</strong>
+                    <span class="text-slate-500">Contagem exata</span>
+                  </div>
+                  <div class="rounded-lg bg-white dark:bg-slate-900 p-2.5 border border-slate-200 dark:border-slate-800">
+                    <strong class="block text-base text-sky-600">Injustiças</strong>
+                    <span class="text-slate-500">Contagem exata</span>
+                  </div>
+                  <div class="rounded-lg bg-white dark:bg-slate-900 p-2.5 border border-slate-200 dark:border-slate-800">
+                    <strong class="block text-base text-slate-700 dark:text-slate-200">Ausências</strong>
+                    <span class="text-slate-500">Contagem exata</span>
+                  </div>
+                </div>
+                <div class="rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 p-3 flex items-center justify-between text-xs">
+                  <span class="font-bold text-red-700 dark:text-red-300">Prejuízo Potencial Identificado</span>
+                  <strong class="text-sm font-black text-red-600 dark:text-red-400">R$ 697,50/ano</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANOS PAGOS (APÓS A PRÉ-ANÁLISE GRATUITA) -->
     <section id="planos" class="py-16 lg:py-24 bg-white dark:bg-slate-900">
       <div class="container">
-        <div class="mx-auto max-w-2xl text-center mb-12">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-primary">Pagamento Único por Análise</span>
+        <div class="mx-auto max-w-2xl text-center mb-14">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-primary">Desbloqueio Opcional do Relatório Completo</span>
           <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
-            Uma fração do custo de uma consulta jurídica
+            Só pague se quiser abrir os detalhes e soluções
           </h2>
           <p class="mt-3 text-slate-600 dark:text-slate-400">
-            Um advogado tradicional cobra entre <strong>R$ 300 e R$ 800</strong> por parecer. Na AluguelOK você faz a pré-análise grátis e escolhe o nível de profundidade ideal.
+            Um advogado tradicional cobra entre <strong>R$ 300 e R$ 800</strong> por parecer. Após ver sua Pré-Análise gratuita, escolha o nível ideal (com upgrade pagando apenas a diferença):
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 max-w-5xl mx-auto items-stretch">
           <!-- Compacta -->
-          <div class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-8">
+          <div class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-8 pt-10">
             <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">Análise Compacta</h3>
             <p class="text-sm text-slate-500 mt-1">Visão inicial rápida para decisões urgentes.</p>
             <div class="my-6">
@@ -428,10 +456,10 @@
             </a>
           </div>
 
-          <!-- Essencial -->
-          <div class="relative flex flex-col rounded-2xl border-2 border-primary bg-white dark:bg-slate-900 p-8 shadow-xl">
-            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white">
-              Mais Vendida • Melhor Custo-Benefício
+          <!-- Essencial (Badge sem sobreposição!) -->
+          <div class="relative flex flex-col rounded-2xl border-2 border-primary bg-white dark:bg-slate-900 p-8 pt-10 shadow-xl">
+            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-primary px-4 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white shadow-sm">
+              Mais Vendida • Melhor Custo
             </span>
             <h3 class="text-xl font-extrabold text-primary">Análise Essencial</h3>
             <p class="text-sm text-slate-500 mt-1">Equilíbrio entre proteção jurídica e economia.</p>
@@ -452,8 +480,8 @@
           </div>
 
           <!-- Completa -->
-          <div class="flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-900 text-white p-8">
-            <h3 class="text-xl font-extrabold text-white">Análise Completa</h3>
+          <div class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900 text-white p-8 pt-10">
+            <h3 class="text-xl font-extrabold !text-white">Análise Completa</h3>
             <p class="text-sm text-slate-400 mt-1">Visão 360º para assinar sem nenhuma dúvida.</p>
             <div class="my-6">
               <span class="text-4xl font-black text-white">R$ 189,99</span>
@@ -506,7 +534,7 @@
     <!-- CTA FINAL -->
     <section class="py-16 bg-primary text-white">
       <div class="container text-center max-w-3xl">
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Pronto para saber o que realmente está escrito no seu contrato?</h2>
+        <h2 class="text-3xl sm:text-4xl font-extrabold !text-white mb-4">Pronto para saber o que realmente está escrito no seu contrato?</h2>
         <p class="text-blue-100 mb-8">Escolha seu perfil e receba sua pré-análise gratuita em poucos segundos.</p>
         <div class="flex flex-wrap justify-center gap-4">
           <a href="#" data-cta="footer_cta" data-profile="Inquilino" class="rounded-xl bg-white px-7 py-4 text-sm font-extrabold text-primary shadow-lg hover:bg-blue-50 transition">
@@ -548,92 +576,17 @@
   <script src="../js/main.js"></script>
   <script data-variant-script>
     (function () {
-      var data = {
-        Inquilino: {
-          letter: "C",
-          ring: "border-amber-400 bg-amber-50 dark:bg-amber-950/30",
-          letterColor: "text-amber-600 dark:text-amber-400",
-          title: "Atenção Recomendada",
-          sub: "Contrato desequilibrado contra o Inquilino",
-          loss: "R$ 697,50/ano",
-          balLeft: "Proprietário: 66% das vantagens",
-          balRight: "Inquilino: 34%",
-          barWidth: "66%",
-          ileg: "2", abus: "3", inj: "2", aus: "2",
-          f1: "<strong>Cláusula 8ª (Ilegalidade):</strong> Repassa ao inquilino despesas extraordinárias de condomínio (reforma de fachada), violando o Art. 22 da Lei nº 8.245/91.",
-          f2: "<strong>Reajuste IGP-M vs. IPCA:</strong> Substituir o índice contratado pode gerar economia estimada de <strong>R$ 697,50</strong> nos próximos 12 meses."
-        },
-        Proprietario: {
-          letter: "D",
-          ring: "border-red-500 bg-red-50 dark:bg-red-950/30",
-          letterColor: "text-red-600 dark:text-red-400",
-          title: "Risco Patrimonial Elevado",
-          sub: "Lacunas graves de garantia e vistoria para o Proprietário",
-          loss: "R$ 3.600,00 risco",
-          balLeft: "Proprietário: 38% proteção",
-          balRight: "Inquilino: 62%",
-          barWidth: "38%",
-          ileg: "1", abus: "1", inj: "2", aus: "4",
-          f1: "<strong>Cláusula Ausente (Crítico):</strong> Contrato não define prazo de devolução com pintura nova nem critério objetivo na vistoria de saída.",
-          f2: "<strong>Garantia Frágil:</strong> Redação ambígua sobre execução de multa rescisória proporcional e cobertura de encargos atrasados."
-        }
-      };
-
-      function setPreview(profile) {
-        var d = data[profile] || data.Inquilino;
-        var btnInq = document.getElementById("lpA-sim-inq");
-        var btnProp = document.getElementById("lpA-sim-prop");
-        if (btnInq && btnProp) {
-          btnInq.className = profile === "Inquilino" ? "px-2.5 py-1 rounded-md bg-primary text-white" : "px-2.5 py-1 rounded-md text-slate-300 hover:text-white";
-          btnProp.className = profile === "Proprietario" ? "px-2.5 py-1 rounded-md bg-primary text-white" : "px-2.5 py-1 rounded-md text-slate-300 hover:text-white";
-        }
-        var ring = document.getElementById("lpA-score-ring");
-        var letter = document.getElementById("lpA-score-letter");
-        if (ring) ring.className = "flex h-20 w-20 shrink-0 items-center justify-center rounded-full border-[6px] " + d.ring;
-        if (letter) {
-          letter.className = "text-3xl font-black " + d.letterColor;
-          letter.textContent = d.letter;
-        }
-        var map = {
-          "lpA-score-title": d.title,
-          "lpA-score-sub": d.sub,
-          "lpA-loss-value": d.loss,
-          "lpA-bal-left": d.balLeft,
-          "lpA-bal-right": d.balRight,
-          "lpA-cnt-ileg": d.ileg,
-          "lpA-cnt-abus": d.abus,
-          "lpA-cnt-inj": d.inj,
-          "lpA-cnt-aus": d.aus
-        };
-        Object.keys(map).forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) el.textContent = map[id];
+      var playBtn = document.getElementById("lpA-play-video");
+      var videoBox = document.getElementById("lpA-video-box");
+      if (playBtn && videoBox) {
+        playBtn.addEventListener("click", function () {
+          videoBox.innerHTML =
+            '<iframe class="w-full h-full" src="https://www.youtube.com/embed/SECaI-r-tVE?autoplay=1&rel=0" title="Como funciona a AluguelOK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+          if (window.AluguelOKAB && typeof window.clarity === "function") {
+            window.clarity("event", "lp_A_video_play");
+          }
         });
-        var bar = document.getElementById("lpA-bal-bar");
-        if (bar) bar.style.width = d.barWidth;
-        var f1 = document.getElementById("lpA-finding-1");
-        var f2 = document.getElementById("lpA-finding-2");
-        if (f1) f1.innerHTML = d.f1;
-        if (f2) f2.innerHTML = d.f2;
-
-        var cta = document.getElementById("lpA-mockup-cta");
-        if (cta) {
-          cta.setAttribute("data-profile", profile);
-          cta.querySelector("span").textContent = "Fazer Pré-Análise Grátis como " + (profile === "Proprietario" ? "Proprietário" : "Inquilino");
-          if (window.AluguelOKAB) window.AluguelOKAB.bindCTAs(window.AluguelOKAB.getVariant());
-        }
       }
-
-      var bInq = document.getElementById("lpA-sim-inq");
-      var bProp = document.getElementById("lpA-sim-prop");
-      if (bInq) bInq.addEventListener("click", function () { setPreview("Inquilino"); });
-      if (bProp) bProp.addEventListener("click", function () { setPreview("Proprietario"); });
-
-      document.querySelectorAll("[data-preview-trigger]").forEach(function (el) {
-        el.addEventListener("mouseenter", function () {
-          setPreview(el.getAttribute("data-preview-trigger"));
-        });
-      });
 
       // Abas dos 11 módulos
       var tabBtns = document.querySelectorAll("[data-lp-a-tab]");

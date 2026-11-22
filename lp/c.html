@@ -21,7 +21,8 @@
 
   <style data-variant-style>
     .lp-c-hero-bg {
-      background: linear-gradient(135deg, #0b3bb7 0%, #0d6efd 55%, #1d4ed8 100%);
+      background-color: #0d6efd;
+      background-image: linear-gradient(135deg, #0b3bb7 0%, #0d6efd 55%, #1d4ed8 100%);
     }
     .lp-c-persona-btn.is-selected {
       background-color: #ffffff;
@@ -29,7 +30,7 @@
       box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.28);
     }
     .lp-c-persona-btn:not(.is-selected) {
-      color: rgba(255, 255, 255, 0.85);
+      color: rgba(255, 255, 255, 0.9);
     }
   </style>
 
@@ -45,12 +46,12 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
 
   <!-- Navbar -->
-  <header class="ic-navbar fixed left-0 top-0 z-50 flex w-full items-center bg-primary/95 backdrop-blur-md border-b border-white/15" role="banner">
+  <header class="ic-navbar ic-navbar-custom fixed left-0 top-0 z-50 flex w-full items-center bg-primary/95 backdrop-blur-md border-b border-white/15" role="banner">
     <div class="container">
       <div class="ic-navbar-container relative -mx-5 flex items-center justify-between py-2">
         <div class="w-48 lg:w-52 max-w-full px-5">
           <a href="#home" class="ic-navbar-logo block py-2">
-            <img src="../img/logo/aluguelok-white.png" width="180" alt="AluguelOK" />
+            <img src="../img/logo/aluguelok-white.png" width="176" alt="AluguelOK" />
           </a>
         </div>
 
@@ -59,6 +60,7 @@
             <ul class="block lg:flex lg:items-center lg:gap-7 text-sm font-semibold text-slate-800 lg:text-white">
               <li><a href="#riscos-perfil" class="ic-page-scroll block py-2 hover:opacity-80">Seu Perfil</a></li>
               <li><a href="#bento-relatorio" class="ic-page-scroll block py-2 hover:opacity-80">Relatório Completo</a></li>
+              <li><a href="#pre-analise" class="ic-page-scroll block py-2 hover:opacity-80">Pré-Análise Grátis</a></li>
               <li><a href="#planos" class="ic-page-scroll block py-2 hover:opacity-80">Planos</a></li>
               <li><a href="../artigos/index.html" class="block py-2 hover:opacity-80">Artigos</a></li>
               <li><a href="../ferramentas/index.html" class="block py-2 hover:opacity-80">Calculadoras</a></li>
@@ -81,7 +83,7 @@
 
   <main class="main relative">
     <!-- HERO GUIDED PERSONA -->
-    <section id="home" class="lp-c-hero-bg text-white pt-28 pb-16 lg:pt-36 lg:pb-24">
+    <section id="home" class="lp-custom-hero lp-c-hero-bg text-white pt-28 pb-16 lg:pt-36 lg:pb-24">
       <div class="container max-w-5xl text-center">
         <p class="text-xs font-extrabold uppercase tracking-widest text-blue-200 mb-4">
           Auditoria Inteligente • Lei do Inquilinato (8.245/91)
@@ -210,8 +212,8 @@
                 <strong class="text-slate-900 dark:text-white">Projeção 12m</strong>
               </div>
               <div class="rounded-lg bg-emerald-50 dark:bg-emerald-950/30 p-2.5 border border-emerald-200 dark:border-emerald-900">
-                <span class="block text-emerald-700 dark:text-emerald-400">IPCA / INPC / IPC-Fipe</span>
-                <strong class="text-emerald-700 dark:text-emerald-300">Comparativo</strong>
+                <span class="block text-emerald-700 dark:text-emerald-400">IPCA / INPC / Fipe</span>
+                <strong class="text-emerald-700 dark:text-emerald-300">Comparativo 12m</strong>
               </div>
             </div>
             <div class="rounded-xl bg-red-50 dark:bg-red-950/30 p-3 text-xs text-red-700 dark:text-red-300 font-semibold">
@@ -245,6 +247,44 @@
             </div>
             <div class="text-xs text-slate-500 dark:text-slate-400">
               <strong>+ Guia de Vistoria:</strong> Checklist separado para Entrada e Saída.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DEDICADA: PRÉ-ANÁLISE GRATUITA (ANTES DOS PLANOS) -->
+    <section id="pre-analise" class="py-16 bg-emerald-50/70 dark:bg-emerald-950/20 border-t border-emerald-200/80 dark:border-emerald-900/50">
+      <div class="container max-w-5xl">
+        <div class="rounded-3xl bg-white dark:bg-slate-900 border-2 border-emerald-500/40 p-7 sm:p-10 shadow-xl">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div class="max-w-2xl">
+              <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-3.5 py-1 text-xs font-extrabold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-3">
+                <i class="lni lni-gift"></i> Passo 100% Gratuito • Sem Cartão nem Cadastro Prévio
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-3">
+                Receba sua Pré-Análise Gratuita antes de escolher qualquer plano
+              </h2>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-5">
+                Após enviar o contrato na dropzone, nossa IA libera gratuitamente o diagnóstico inicial com a <strong>Nota (A–E)</strong>, o <strong>Resumo Simplificado</strong>, o <strong>placar por categoria</strong> (Ilegalidades, Abusividades, Injustiças e Ausências) e o <strong>Prejuízo Potencial Anual</strong>.
+              </p>
+              <a href="#" data-cta="pre_analise" data-profile="Inquilino" class="lpC-dynamic-cta inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-6 py-3.5 text-sm font-extrabold text-white shadow-sm transition">
+                <i class="lni lni-upload"></i> Enviar Contrato para Pré-Análise Grátis
+              </a>
+            </div>
+            <div class="shrink-0 grid grid-cols-2 gap-3 text-center w-full lg:w-72">
+              <div class="rounded-2xl bg-slate-50 dark:bg-slate-950 p-4 border border-slate-200 dark:border-slate-800">
+                <span class="block text-2xl font-black text-emerald-600">Selo A–E</span>
+                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Nota imediata</span>
+              </div>
+              <div class="rounded-2xl bg-slate-50 dark:bg-slate-950 p-4 border border-slate-200 dark:border-slate-800">
+                <span class="block text-2xl font-black text-primary">4 Placar</span>
+                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Contagem de falhas</span>
+              </div>
+              <div class="col-span-2 rounded-2xl bg-red-50 dark:bg-red-950/30 p-3.5 border border-red-200 dark:border-red-900/50">
+                <span class="block text-xs font-bold text-red-700 dark:text-red-300">Prejuízo Potencial (R$/ano)</span>
+                <span class="text-xs text-red-600 dark:text-red-400">Visível antes de qualquer pagamento</span>
+              </div>
             </div>
           </div>
         </div>

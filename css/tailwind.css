@@ -195,39 +195,39 @@
   .ic-navbar {
     @apply border-0 border-b border-transparent;
   }
-  .ic-navbar.sticky {
+  .ic-navbar.sticky:not(.ic-navbar-custom) {
     @apply fixed backdrop-blur bg-opacity-75 shadow-md bg-primary-light-1 dark:bg-primary-dark-1 dark:bg-opacity-70 border-alpha-light dark:border-alpha-dark z-[9999];
   }
-  .ic-navbar.sticky .ic-navbar-logo {
+  .ic-navbar.sticky:not(.ic-navbar-custom) .ic-navbar-logo {
     @apply text-body-light-12 dark:text-body-dark-12;
   }
-  .ic-navbar.sticky .ic-navbar-logo #NavbarBrandIcon {
+  .ic-navbar.sticky:not(.ic-navbar-custom) .ic-navbar-logo #NavbarBrandIcon {
     @apply fill-primary;
   }
-  .ic-navbar.sticky .ic-navbar-toggler {
+  .ic-navbar.sticky:not(.ic-navbar-custom) .ic-navbar-toggler {
     @apply text-body-light-12 dark:text-body-dark-12;
   }
   .ic-navbar.menu-show .ic-navbar-collapse {
     @apply block -z-[1];
   }
-  .ic-navbar.sticky .ic-page-scroll,
-  .ic-navbar.sticky .ic-nav-link {
+  .ic-navbar.sticky:not(.ic-navbar-custom) .ic-page-scroll,
+  .ic-navbar.sticky:not(.ic-navbar-custom) .ic-nav-link {
     @apply lg:text-body-light-12 lg:dark:text-body-dark-12 lg:hover:text-primary lg:hover:opacity-100;
   }
-  .ic-page-scroll.active {
+  .ic-page-scroll.active:not(.ic-navbar-custom *) {
     @apply text-primary lg:text-primary-color lg:opacity-70;
   }
-  .ic-navbar.sticky .ic-page-scroll.active {
+  .ic-navbar.sticky:not(.ic-navbar-custom) .ic-page-scroll.active {
     @apply lg:text-primary lg:opacity-100;
   }
-  .ic-navbar.sticky [data-web-trigger="web-theme"] {
+  .ic-navbar.sticky:not(.ic-navbar-custom) [data-web-trigger="web-theme"] {
     @apply text-body-light-12 dark:text-body-dark-12;
   }
-  .ic-navbar.sticky .btn-navbar {
+  .ic-navbar.sticky:not(.ic-navbar-custom) .btn-navbar {
     @apply bg-primary hover:bg-primary-light-10 dark:hover:bg-primary-dark-10 hover:text-primary-color;
   }
 
-  #home {
+  #home:not(.lp-custom-hero) {
     @apply bg-no-repeat bg-center bg-cover;
     background-image: radial-gradient(
       circle at top right,
