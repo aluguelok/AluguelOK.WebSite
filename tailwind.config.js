@@ -5,8 +5,7 @@ module.exports = {
     "./lp/**/*.html",
     "./js/**/*.js",
     "./artigos/**/*.html",
-    "./ferramentas/**/*.html",
-    "./parceiros/**/*.js"
+    "./ferramentas/**/*.html"
   ],
   darkMode: ["selector", "[data-web-theme=dark]"],
   theme: {
