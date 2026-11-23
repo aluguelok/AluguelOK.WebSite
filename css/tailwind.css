@@ -48,7 +48,13 @@
   }
 
   a {
-    @apply text-balance break-words text-primary-light-11 hover:text-primary-light-10 dark:text-primary-dark-11 dark:hover:text-primary-dark-10 no-underline;
+    @apply text-balance break-words no-underline;
+    color: inherit;
+  }
+
+  article a:not([class*="text-"]),
+  .prose-content a:not([class*="text-"]) {
+    @apply text-primary-light-11 hover:text-primary-light-10 dark:text-primary-dark-11 dark:hover:text-primary-dark-10;
   }
 
   a,
@@ -72,7 +78,8 @@
   }
 
   strong {
-    @apply font-bold text-body-light-12 dark:text-body-dark-12;
+    @apply font-bold;
+    color: inherit;
   }
 
   h1,

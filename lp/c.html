@@ -56,20 +56,20 @@
         </div>
 
         <div class="flex w-full items-center justify-end gap-4 px-5">
-          <nav id="navbarMenu" class="ic-navbar-collapse absolute right-4 top-[72px] hidden w-full max-w-[260px] rounded-xl bg-white p-5 shadow-xl lg:static lg:block lg:w-auto lg:max-w-full lg:bg-transparent lg:p-0 lg:shadow-none">
-            <ul class="block lg:flex lg:items-center lg:gap-7 text-sm font-semibold text-slate-800 lg:text-white">
-              <li><a href="#riscos-perfil" class="ic-page-scroll block py-2 hover:opacity-80">Seu Perfil</a></li>
-              <li><a href="#bento-relatorio" class="ic-page-scroll block py-2 hover:opacity-80">Relatório Completo</a></li>
-              <li><a href="#pre-analise" class="ic-page-scroll block py-2 hover:opacity-80">Pré-Análise Grátis</a></li>
-              <li><a href="#planos" class="ic-page-scroll block py-2 hover:opacity-80">Planos</a></li>
-              <li><a href="../artigos/index.html" class="block py-2 hover:opacity-80">Artigos</a></li>
-              <li><a href="../ferramentas/index.html" class="block py-2 hover:opacity-80">Calculadoras</a></li>
+          <nav id="navbarMenu" class="ic-navbar-collapse absolute right-4 top-[72px] hidden w-full max-w-[260px] rounded-xl bg-white dark:bg-slate-900 p-5 shadow-xl lg:static lg:block lg:w-auto lg:max-w-full lg:bg-transparent lg:dark:bg-transparent lg:p-0 lg:shadow-none">
+            <ul class="block lg:flex lg:items-center lg:gap-7 text-sm font-semibold text-slate-800 dark:text-slate-100 lg:text-white">
+              <li><a href="#riscos-perfil" class="ic-page-scroll block py-2 text-slate-800 dark:text-slate-100 lg:text-slate-100 hover:text-primary lg:hover:text-white transition">Seu Perfil</a></li>
+              <li><a href="#bento-relatorio" class="ic-page-scroll block py-2 text-slate-800 dark:text-slate-100 lg:text-slate-100 hover:text-primary lg:hover:text-white transition">Relatório Completo</a></li>
+              <li><a href="#pre-analise" class="ic-page-scroll block py-2 text-slate-800 dark:text-slate-100 lg:text-slate-100 hover:text-primary lg:hover:text-white transition">Pré-Análise Grátis</a></li>
+              <li><a href="#planos" class="ic-page-scroll block py-2 text-slate-800 dark:text-slate-100 lg:text-slate-100 hover:text-primary lg:hover:text-white transition">Planos</a></li>
+              <li><a href="../artigos/index.html" class="block py-2 text-slate-800 dark:text-slate-100 lg:text-slate-100 hover:text-primary lg:hover:text-white transition">Artigos</a></li>
+              <li><a href="../ferramentas/index.html" class="block py-2 text-slate-800 dark:text-slate-100 lg:text-slate-100 hover:text-primary lg:hover:text-white transition">Calculadoras</a></li>
             </ul>
           </nav>
 
           <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/25 text-white text-lg" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
 
-          <a href="#" id="lpC-nav-cta" data-cta="nav" data-profile="Inquilino" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-extrabold text-primary shadow-sm hover:bg-blue-50 transition">
+          <a href="#" id="lpC-nav-cta" data-cta="nav" data-profile="Inquilino" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-extrabold text-primary hover:text-primary shadow-sm hover:bg-blue-50 transition">
             Começar Grátis
           </a>
 
@@ -92,10 +92,10 @@
         <!-- Seletor de Persona Central -->
         <div class="inline-flex flex-col sm:flex-row rounded-2xl bg-slate-950/30 p-1.5 border border-white/20 mb-8">
           <button type="button" id="lpC-btn-inq" class="lp-c-persona-btn is-selected rounded-xl px-6 py-3 text-sm font-extrabold transition flex items-center justify-center gap-2">
-            <i class="lni lni-key"></i> Estou Alugando (Sou Inquilino)
+            <i class="lni lni-key"></i> Sou Inquilino e Estou Alugando
           </button>
           <button type="button" id="lpC-btn-prop" class="lp-c-persona-btn rounded-xl px-6 py-3 text-sm font-extrabold transition flex items-center justify-center gap-2">
-            <i class="lni lni-home"></i> Vou Alugar Meu Imóvel (Sou Proprietário)
+            <i class="lni lni-home"></i> Sou Proprietário e Vou Alugar
           </button>
         </div>
 
@@ -109,11 +109,11 @@
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <a id="lpC-hero-cta-primary" href="#" data-cta="hero" data-profile="Inquilino"
-             class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 px-8 py-4 text-base font-black text-slate-950 shadow-xl transition">
+             class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-8 py-4 text-base font-black text-white hover:text-white shadow-xl transition">
             <i class="lni lni-upload"></i>
             <span id="lpC-hero-cta-text">Enviar Meu Contrato como Inquilino (Grátis)</span>
           </a>
-          <a href="#bento-relatorio" class="ic-page-scroll w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 hover:bg-white/25 px-6 py-4 text-sm font-bold text-white border border-white/20 transition">
+          <a href="#bento-relatorio" class="ic-page-scroll w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white/15 hover:bg-white/25 px-6 py-4 text-sm font-bold text-white hover:text-white border border-white/20 transition">
             Ver Exemplo do Relatório
           </a>
         </div>
@@ -149,13 +149,29 @@
               O que costumamos flagrar para quem vai alugar
             </h2>
           </div>
-          <button type="button" id="lpC-switch-inline" class="self-start md:self-auto rounded-lg border border-slate-200 dark:border-slate-700 px-4 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-primary">
-            Alternar para visão do Proprietário →
-          </button>
+          <div class="inline-flex items-center gap-1.5 self-start md:self-auto rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 p-1" role="group" aria-label="Carrossel de visões por perfil">
+            <button type="button" id="lpC-carousel-prev" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 transition" aria-label="Visão anterior">
+              <i class="lni lni-chevron-left"></i>
+            </button>
+            <button type="button" id="lpC-tab-inq" class="rounded-lg px-3 py-1.5 text-xs font-extrabold bg-primary text-white shadow-sm transition">
+              Inquilino
+            </button>
+            <button type="button" id="lpC-tab-prop" class="rounded-lg px-3 py-1.5 text-xs font-extrabold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition">
+              Proprietário
+            </button>
+            <button type="button" id="lpC-carousel-next" class="inline-flex h-8 w-8 items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-800 transition" aria-label="Próxima visão">
+              <i class="lni lni-chevron-right"></i>
+            </button>
+          </div>
         </div>
 
-        <div id="lpC-risk-cards" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div id="lpC-risk-cards" class="grid grid-cols-1 md:grid-cols-2 gap-5 transition-opacity duration-200">
           <!-- Preenchido via JS conforme perfil -->
+        </div>
+
+        <div class="mt-6 flex items-center justify-center gap-2" aria-label="Indicadores do carrossel">
+          <button type="button" id="lpC-dot-inq" class="h-2.5 w-7 rounded-full bg-primary transition-all" aria-label="Slide Inquilino"></button>
+          <button type="button" id="lpC-dot-prop" class="h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-all" aria-label="Slide Proprietário"></button>
         </div>
       </div>
     </section>
@@ -268,7 +284,7 @@
               <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-5">
                 Após enviar o contrato na dropzone, nossa IA libera gratuitamente o diagnóstico inicial com a <strong>Nota (A–E)</strong>, o <strong>Resumo Simplificado</strong>, o <strong>placar por categoria</strong> (Ilegalidades, Abusividades, Injustiças e Ausências) e o <strong>Prejuízo Potencial Anual</strong>.
               </p>
-              <a href="#" data-cta="pre_analise" data-profile="Inquilino" class="lpC-dynamic-cta inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-6 py-3.5 text-sm font-extrabold text-white shadow-sm transition">
+              <a href="#" data-cta="pre_analise" data-profile="Inquilino" class="lpC-dynamic-cta inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-6 py-3.5 text-sm font-extrabold text-white hover:text-white shadow-sm transition">
                 <i class="lni lni-upload"></i> Enviar Contrato para Pré-Análise Grátis
               </a>
             </div>
@@ -300,27 +316,27 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-7 flex flex-col">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 p-7 flex flex-col">
             <h3 class="font-extrabold text-lg">Compacta</h3>
             <p class="text-3xl font-black mt-2">R$ 39,99</p>
-            <span class="text-xs text-slate-500 mb-5">30 dias de acesso</span>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Score geral, resumo simplificado e ilegalidades encontradas.</p>
+            <span class="text-xs text-slate-500 dark:text-slate-400 mb-5">30 dias de acesso</span>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Score geral, resumo simplificado e inconsistências encontradas.</p>
             <a href="#" data-cta="plan_compacta" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl border border-primary py-3 text-sm font-bold text-primary hover:bg-primary hover:text-white transition">Testar Grátis</a>
           </div>
-          <div class="rounded-2xl border-2 border-primary bg-blue-50/40 dark:bg-slate-950 p-7 shadow-lg flex flex-col">
+          <div class="rounded-2xl border-2 border-primary bg-blue-50/40 dark:bg-slate-900 p-7 shadow-lg flex flex-col">
             <span class="text-[11px] font-extrabold uppercase text-primary mb-1">Recomendada</span>
             <h3 class="font-extrabold text-lg text-primary">Essencial</h3>
             <p class="text-3xl font-black mt-1">R$ 69,99</p>
-            <span class="text-xs text-emerald-600 font-semibold mb-5">90 dias de acesso</span>
-            <p class="text-sm text-slate-700 dark:text-slate-300 mb-6 flex-grow">Tudo da Compacta + Equilíbrio, Condições Financeiras, 4 Índices, Injustiças e Prejuízo Potencial.</p>
-            <a href="#" data-cta="plan_essencial" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl bg-primary py-3 text-sm font-extrabold text-white hover:bg-primary-light-10 transition">Auditar Agora</a>
+            <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold mb-5">90 dias de acesso</span>
+            <p class="text-sm text-slate-700 dark:text-slate-300 mb-6 flex-grow">Tudo da Compacta + Equilíbrio, Condições Financeiras, 4 Índices, Desequilíbrios e Prejuízo Potencial.</p>
+            <a href="#" data-cta="plan_essencial" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl bg-primary py-3 text-sm font-extrabold text-white hover:text-white hover:bg-primary-light-10 transition">Auditar Agora</a>
           </div>
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-7 flex flex-col">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-7 shadow-xl flex flex-col">
             <h3 class="font-extrabold text-lg">Completa</h3>
             <p class="text-3xl font-black mt-2">R$ 189,99</p>
-            <span class="text-xs text-slate-500 mb-5">360 dias de acesso</span>
+            <span class="text-xs text-slate-500 dark:text-slate-400 mb-5">360 dias de acesso</span>
             <p class="text-sm text-slate-600 dark:text-slate-400 mb-6 flex-grow">Visão 360º: Contradições, Ausências, Simulador de Saída, Responsabilidades e Guia de Vistoria.</p>
-            <a href="#" data-cta="plan_completa" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl bg-slate-900 dark:bg-white py-3 text-sm font-extrabold text-white dark:text-slate-900 transition">Auditoria 360º</a>
+            <a href="#" data-cta="plan_completa" data-profile="Inquilino" class="lpC-dynamic-cta block text-center rounded-xl bg-slate-900 dark:bg-white py-3 text-sm font-extrabold text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 hover:text-white dark:hover:text-slate-900 transition">Auditoria 360º</a>
           </div>
         </div>
 
@@ -344,14 +360,14 @@
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         <img src="../img/logo/aluguelok-white.png" width="160" alt="Logo AluguelOK" />
         <div class="flex flex-wrap justify-center gap-6 text-sm">
-          <a href="../artigos/index.html" class="hover:text-white">Artigos</a>
-          <a href="../ferramentas/index.html" class="hover:text-white">Calculadoras</a>
-          <a href="#" data-cta="footer_policy" data-profile="Policy" class="hover:text-white">Política de Privacidade</a>
-          <a href="#" data-cta="footer_help" data-profile="Help" class="hover:text-white">Central de Ajuda</a>
+          <a href="../artigos/index.html" class="text-slate-300 hover:text-white transition">Artigos</a>
+          <a href="../ferramentas/index.html" class="text-slate-300 hover:text-white transition">Calculadoras</a>
+          <a href="#" data-cta="footer_policy" data-profile="Policy" class="text-slate-300 hover:text-white transition">Política de Privacidade</a>
+          <a href="#" data-cta="footer_help" data-profile="Help" class="text-slate-300 hover:text-white transition">Central de Ajuda</a>
         </div>
       </div>
-      <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-2">
-        <span>© 2026 AluguelOK. Análise jurídica e financeira com IA.</span>
+      <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2">
+        <span>© 2026 AluguelOK. Auditoria contratual e financeira com IA.</span>
         <span>power of <a href="https://kh4os.io/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">kh4os.io</a></span>
       </div>
     </div>
@@ -371,7 +387,6 @@
           ctaText: "Enviar Meu Contrato como Inquilino (Grátis)",
           kicker: "Foco no Inquilino",
           heading: "O que costumamos flagrar para quem vai alugar",
-          switchLabel: "Alternar para visão do Proprietário →",
           cards: [
             { tag: "Ilegalidade Comum", title: "Despesas extraordinárias no seu boleto", desc: "Identificamos quando o contrato tenta repassar reformas estruturais, pintura de fachada ou fundo de reserva que pertencem ao dono." },
             { tag: "Impacto Financeiro", title: "Índice de reajuste desvantajoso", desc: "Comparamos IGP-M, IPCA, IPC-Fipe e INPC e calculamos quanto você economiza por ano ao negociar a troca do índice." },
@@ -384,13 +399,12 @@
           sub: "Envie sua minuta e nossa IA audita tudo sob a ótica do Proprietário: solidez da garantia, prazos de desocupação, benfeitorias, multas e responsabilidades claras.",
           ctaText: "Enviar Minha Minuta como Proprietário (Grátis)",
           kicker: "Foco no Proprietário",
-          heading: "O que blindamos para quem coloca o imóvel para alugar",
-          switchLabel: "Alternar para visão do Inquilino →",
+          heading: "O que identificamos para quem coloca o imóvel para alugar",
           cards: [
             { tag: "Ausência Crítica", title: "Vistoria e estado de devolução vagos", desc: "Detectamos omissões sobre estado de conservação, pintura e prazo de reparos ao final do contrato que geram prejuízo na entrega." },
-            { tag: "Proteção Patrimonial", title: "Garantia locatícia subdimensionada", desc: "Avaliamos caução, seguro fiança ou fiador e apontamos brechas que dificultam a execução de débitos e encargos." },
+            { tag: "Proteção Patrimonial", title: "Garantia locatícia subdimensionada", desc: "Avaliamos caução, seguro fiança ou fiador e apontamos brechas que dificultam a cobrança de débitos e encargos." },
             { tag: "Benfeitorias & Obras", title: "Reformas sem regra de indenização", desc: "Verificamos cláusulas sobre benfeitorias necessárias, úteis e voluptuárias para evitar pedidos de abatimento no aluguel." },
-            { tag: "Equilíbrio Contratual", title: "Cláusulas anuláveis na Justiça", desc: "Alertamos sobre termos que podem ser derrubados por ilegalidade, garantindo um contrato sólido, justo e executável." }
+            { tag: "Equilíbrio Contratual", title: "Cláusulas contrárias à lei", desc: "Alertamos sobre termos irregulares que podem gerar riscos na locação, garantindo um contrato sólido e bem estruturado." }
           ]
         }
       };
@@ -398,13 +412,43 @@
       var currentPersona = "Inquilino";
       var btnInq = document.getElementById("lpC-btn-inq");
       var btnProp = document.getElementById("lpC-btn-prop");
-      var switchInline = document.getElementById("lpC-switch-inline");
+      var tabInq = document.getElementById("lpC-tab-inq");
+      var tabProp = document.getElementById("lpC-tab-prop");
+      var prevBtn = document.getElementById("lpC-carousel-prev");
+      var nextBtn = document.getElementById("lpC-carousel-next");
+      var dotInq = document.getElementById("lpC-dot-inq");
+      var dotProp = document.getElementById("lpC-dot-prop");
+
+      function updateCarouselControls(p) {
+        var isInq = p === "Inquilino";
+        if (tabInq) {
+          tabInq.className = isInq
+            ? "rounded-lg px-3 py-1.5 text-xs font-extrabold bg-primary text-white shadow-sm transition"
+            : "rounded-lg px-3 py-1.5 text-xs font-extrabold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition";
+        }
+        if (tabProp) {
+          tabProp.className = !isInq
+            ? "rounded-lg px-3 py-1.5 text-xs font-extrabold bg-primary text-white shadow-sm transition"
+            : "rounded-lg px-3 py-1.5 text-xs font-extrabold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition";
+        }
+        if (dotInq) {
+          dotInq.className = isInq
+            ? "h-2.5 w-7 rounded-full bg-primary transition-all"
+            : "h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-all";
+        }
+        if (dotProp) {
+          dotProp.className = !isInq
+            ? "h-2.5 w-7 rounded-full bg-primary transition-all"
+            : "h-2.5 w-2.5 rounded-full bg-slate-300 dark:bg-slate-700 transition-all";
+        }
+      }
 
       function renderPersona(p) {
         currentPersona = p;
         var d = content[p];
         if (btnInq) btnInq.classList.toggle("is-selected", p === "Inquilino");
         if (btnProp) btnProp.classList.toggle("is-selected", p === "Proprietario");
+        updateCarouselControls(p);
 
         var title = document.getElementById("lpC-hero-title");
         var sub = document.getElementById("lpC-hero-sub");
@@ -418,7 +462,6 @@
         if (ctaText) ctaText.textContent = d.ctaText;
         if (kicker) kicker.textContent = d.kicker;
         if (heading) heading.textContent = d.heading;
-        if (switchInline) switchInline.textContent = d.switchLabel;
 
         if (cardsEl) {
           cardsEl.innerHTML = d.cards
@@ -447,13 +490,18 @@
         }
       }
 
+      function togglePersona() {
+        renderPersona(currentPersona === "Inquilino" ? "Proprietario" : "Inquilino");
+      }
+
       if (btnInq) btnInq.addEventListener("click", function () { renderPersona("Inquilino"); });
       if (btnProp) btnProp.addEventListener("click", function () { renderPersona("Proprietario"); });
-      if (switchInline) {
-        switchInline.addEventListener("click", function () {
-          renderPersona(currentPersona === "Inquilino" ? "Proprietario" : "Inquilino");
-        });
-      }
+      if (tabInq) tabInq.addEventListener("click", function () { renderPersona("Inquilino"); });
+      if (tabProp) tabProp.addEventListener("click", function () { renderPersona("Proprietario"); });
+      if (dotInq) dotInq.addEventListener("click", function () { renderPersona("Inquilino"); });
+      if (dotProp) dotProp.addEventListener("click", function () { renderPersona("Proprietario"); });
+      if (prevBtn) prevBtn.addEventListener("click", togglePersona);
+      if (nextBtn) nextBtn.addEventListener("click", togglePersona);
 
       renderPersona("Inquilino");
     })();
