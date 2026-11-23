@@ -1,12 +1,17 @@
 // wwwroot/service-worker.js
 
-const CACHE_NAME = 'aluguelok-v2';
+const CACHE_NAME = 'aluguelok-v3';
 const URLS_TO_CACHE = [
     '/',
+    '/lp/a.html',
+    '/lp/b.html',
+    '/lp/c.html',
     '/css/main.css',
     '/js/main.js',
+    '/js/ab-router.js',
     '/favicon/favicon-32x32.png',
-    '/img/logo/aluguelok-white.png'
+    '/img/logo/aluguelok-white.png',
+    '/img/logo/aluguelok-blue.png'
 ];
 
 self.addEventListener('install', event => {
@@ -33,8 +38,12 @@ self.addEventListener('activate', event => {
     );
 });
 
-// Estratégia: Stale-While-Revalidate
+// Estratégia: Stale-While-Revalidate apenas para GET da mesma origem (nunca intercepta APIs externas)
 self.addEventListener('fetch', event => {
+    if (event.request.method !== 'GET') return;
+    const reqUrl = new URL(event.request.url);
+    if (reqUrl.origin !== self.location.origin) return;
+
     event.respondWith(
         caches.match(event.request).then(cachedResponse => {
             const fetchPromise = fetch(event.request).then(networkResponse => {
@@ -46,11 +55,9 @@ self.addEventListener('fetch', event => {
                     });
                 }
                 return networkResponse;
-            }).catch(() => {
-                // Em caso de falha de rede, ignora e o usuário verá a versão do cache
-            });
-            
-            // Retorna a resposta do cache imediatamente (se existir). 
+            }).catch(() => cachedResponse);
+
+            // Retorna a resposta do cache imediatamente (se existir).
             // Senão, aguarda a resposta da rede.
             return cachedResponse || fetchPromise;
         })

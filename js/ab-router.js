@@ -25,10 +25,26 @@
     },
   };
 
+  var _assignmentSource = "unknown";
+
   function normalizeVariant(val) {
     if (!val) return null;
     var upper = String(val).trim().toUpperCase();
     return CONFIG.VARIANTS.indexOf(upper) !== -1 ? upper : null;
+  }
+
+  function getCookie(name) {
+    try {
+      var prefix = name + "=";
+      var parts = (document.cookie || "").split(";");
+      for (var i = 0; i < parts.length; i++) {
+        var c = parts[i].trim();
+        if (c.indexOf(prefix) === 0) {
+          return decodeURIComponent(c.slice(prefix.length));
+        }
+      }
+    } catch (e) {}
+    return null;
   }
 
   function getQueryParam(name) {
@@ -42,6 +58,8 @@
   function persistAssignedVariant(variant) {
     try {
       localStorage.setItem(CONFIG.STORAGE_KEY, variant);
+    } catch (e) {}
+    try {
       document.cookie =
         "aluguelok_ab=" +
         variant +
@@ -51,11 +69,13 @@
 
   function randomFallbackVariant() {
     var randomIndex = Math.floor(Math.random() * CONFIG.VARIANTS.length);
-    if (window.crypto && window.crypto.getRandomValues) {
-      var arr = new Uint32Array(1);
-      window.crypto.getRandomValues(arr);
-      randomIndex = arr[0] % CONFIG.VARIANTS.length;
-    }
+    try {
+      if (window.crypto && window.crypto.getRandomValues) {
+        var arr = new Uint32Array(1);
+        window.crypto.getRandomValues(arr);
+        randomIndex = arr[0] % CONFIG.VARIANTS.length;
+      }
+    } catch (e) {}
     return CONFIG.VARIANTS[randomIndex];
   }
 
@@ -65,12 +85,16 @@
       try {
         localStorage.removeItem(CONFIG.STORAGE_KEY);
       } catch (e) {}
+      try {
+        document.cookie = "aluguelok_ab=; path=/; max-age=0; SameSite=Lax";
+      } catch (e) {}
     }
 
     var forced =
       normalizeVariant(getQueryParam("lp")) ||
       normalizeVariant(getQueryParam("variant"));
     if (forced) {
+      _assignmentSource = "query";
       persistAssignedVariant(forced);
       return forced;
     }
@@ -80,6 +104,13 @@
       stored = normalizeVariant(localStorage.getItem(CONFIG.STORAGE_KEY));
     } catch (e) {}
 
+    if (!stored) {
+      stored = normalizeVariant(getCookie("aluguelok_ab"));
+    }
+
+    if (stored) {
+      _assignmentSource = "stored";
+    }
     return stored;
   }
 
@@ -87,48 +118,64 @@
     var existing = resolveStoredOrForcedVariant();
     if (existing) return existing;
 
+    _assignmentSource = "random";
     var assigned = randomFallbackVariant();
     persistAssignedVariant(assigned);
     return assigned;
   }
 
   async function resolveVariantProportionalAsync() {
-    var existing = resolveStoredOrForcedVariant();
-    if (existing) return existing;
+    try {
+      var existing = resolveStoredOrForcedVariant();
+      if (existing) return existing;
 
-    var assigned = null;
-    if (window.location.protocol !== "file:" && typeof fetch === "function") {
-      var controller =
-        typeof AbortController === "function" ? new AbortController() : null;
-      var timerId = controller
-        ? setTimeout(function () {
-            controller.abort();
-          }, CONFIG.ASSIGN_TIMEOUT_MS)
-        : null;
+      var assigned = null;
+      var canFetch =
+        window.location.protocol !== "file:" && typeof fetch === "function";
 
-      try {
-        var res = await fetch(CONFIG.API_BASE_URL + "/api/v1/ab/assign", {
-          method: "GET",
-          cache: "no-store",
-          signal: controller ? controller.signal : undefined,
-        });
-        if (res.ok) {
-          var data = await res.json();
-          assigned = normalizeVariant(data && data.variant);
+      if (canFetch) {
+        var controller =
+          typeof AbortController === "function" ? new AbortController() : null;
+        var timerId = controller
+          ? setTimeout(function () {
+              controller.abort();
+            }, CONFIG.ASSIGN_TIMEOUT_MS)
+          : null;
+
+        try {
+          var res = await fetch(CONFIG.API_BASE_URL + "/api/v1/ab/assign", {
+            method: "GET",
+            mode: "cors",
+            cache: "no-store",
+            signal: controller ? controller.signal : undefined,
+          });
+          if (res && res.ok) {
+            var data = await res.json();
+            assigned = normalizeVariant(data && data.variant);
+            if (assigned) {
+              _assignmentSource = "api";
+            }
+          }
+        } catch (e) {
+          // Fallback automático abaixo caso API esteja indisponível, sem CORS ou com timeout
+        } finally {
+          if (timerId !== null) clearTimeout(timerId);
         }
-      } catch (e) {
-        // Fallback automático abaixo caso API esteja indisponível/timeout
-      } finally {
-        if (timerId !== null) clearTimeout(timerId);
       }
-    }
 
-    if (!assigned) {
-      assigned = randomFallbackVariant();
-    }
+      if (!assigned) {
+        assigned = randomFallbackVariant();
+        _assignmentSource = "random";
+      }
 
-    persistAssignedVariant(assigned);
-    return assigned;
+      persistAssignedVariant(assigned);
+      return assigned;
+    } catch (e) {
+      var emergency = randomFallbackVariant();
+      _assignmentSource = "random";
+      persistAssignedVariant(emergency);
+      return emergency;
+    }
   }
 
   function profileCode(profile) {
@@ -180,6 +227,7 @@
     try {
       if (typeof window.clarity === "function") {
         window.clarity("set", "ab_variant", variant);
+        window.clarity("set", "ab_source", _assignmentSource);
         if (eventName) {
           window.clarity("event", eventName);
         }
@@ -241,7 +289,9 @@
     bar.style.cssText =
       "position:fixed;bottom:16px;left:16px;z-index:99999;background:#0f172a;color:#fff;padding:8px 12px;border-radius:12px;font-size:12px;font-family:Inter,sans-serif;display:flex;align-items:center;gap:8px;box-shadow:0 10px 25px rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.15);";
     bar.innerHTML =
-      '<span style="opacity:.75;">A/B Test:</span>' +
+      '<span style="opacity:.75;">A/B (' +
+      _assignmentSource +
+      '):</span>' +
       ["A", "B", "C"]
         .map(function (v) {
           var active = v === variant;
@@ -293,7 +343,13 @@
     document.documentElement.setAttribute("data-ab-variant", variant);
 
     try {
-      var response = await fetch(path, { cache: "no-store" });
+      var response;
+      try {
+        response = await fetch(path, { cache: "no-store" });
+      } catch (networkErr) {
+        // Retry permitindo cache (útil com Service Worker / rede instável)
+        response = await fetch(path);
+      }
       if (!response.ok) throw new Error("HTTP " + response.status);
       var htmlText = await response.text();
       var doc = new DOMParser().parseFromString(htmlText, "text/html");
@@ -400,10 +456,17 @@
       return;
     }
 
-    // Execução via index.html (Orquestrador A/B/C proporcional via API)
-    resolveVariantProportionalAsync().then(function (assigned) {
-      mountOrchestratedVariant(assigned);
-    });
+    // Execução via index.html (Orquestrador A/B/C proporcional via API com fallback aleatório garantido)
+    resolveVariantProportionalAsync()
+      .then(function (assigned) {
+        return mountOrchestratedVariant(assigned);
+      })
+      .catch(function () {
+        var fallback = randomFallbackVariant();
+        _assignmentSource = "random";
+        persistAssignedVariant(fallback);
+        return mountOrchestratedVariant(fallback);
+      });
   }
 
   window.AluguelOKAB = {
@@ -415,6 +478,9 @@
         document.documentElement.getAttribute("data-ab-variant") ||
         resolveVariant()
       );
+    },
+    getSource: function () {
+      return _assignmentSource;
     },
     buildAppUrl: buildAppUrl,
     bindCTAs: bindCTAs,
