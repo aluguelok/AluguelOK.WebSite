@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="aluguelok-page-kind" content="content" />
     <title>Calculadora de Multa Rescisória de Aluguel (Proporcional) | AluguelOK</title>
     <meta name="description" content="Calcule a multa exata por quebra de contrato de aluguel. Ferramenta gratuita baseada na Lei do Inquilinato (regra proporcional)." />
     <meta name="keywords" content="calcular multa rescisoria aluguel, regra de tres multa aluguel, multa proporcional aluguel, lei do inquilinato multa, quebra de contrato aluguel, ferramenta" />
@@ -78,49 +79,76 @@
                 })(window, document, "clarity", "script", "y18bdk5t96");
     </script>
 </head>
-<body class="bg-body-light-1 text-body-light-12">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
 
     <!-- Header -->
-    <header class="ic-navbar absolute left-0 top-0 z-40 flex w-full items-center bg-transparent" role="banner">
-        <div class="container">
-            <div class="ic-navbar-container relative -mx-5 flex items-center justify-between">
-                <div class="w-60 lg:w-56 max-w-full px-5">
-                    <a href="../index.html" class="ic-navbar-logo block w-full py-5 text-primary-color">
-                        <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
-                    </a>
-                </div>
-                <div class="flex items-center justify-end pr-5 lg:pr-0">
-                    <button type="button" class="inline-flex items-center text-primary-color text-[24px]/none" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
-                </div>
-            </div>
+    <header class="ic-navbar ic-navbar-custom fixed left-0 top-0 z-50 flex w-full items-center bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 no-print" role="banner" aria-label="Barra de Navegação">
+    <div class="container">
+      <div class="ic-navbar-container relative -mx-5 flex items-center justify-between py-2">
+        <div class="w-48 lg:w-52 max-w-full px-5">
+          <a href="../index.html" class="ic-navbar-logo block py-2" aria-label="Página Inicial AluguelOK">
+            <img src="../img/logo/aluguelok-blue.png" width="176" alt="AluguelOK" class="dark:hidden" />
+            <img src="../img/logo/aluguelok-white.png" width="176" alt="AluguelOK" class="hidden dark:block" />
+          </a>
         </div>
-    </header>
 
-    <main class="main relative" role="main">
+        <div class="flex w-full items-center justify-end gap-4 px-5">
+          <nav id="navbarMenu" class="ic-navbar-collapse absolute right-4 top-[72px] hidden w-full max-w-[260px] rounded-xl bg-white p-5 shadow-xl border border-slate-200 dark:bg-slate-900 dark:border-slate-800 lg:static lg:block lg:w-auto lg:max-w-full lg:bg-transparent lg:p-0 lg:shadow-none lg:border-0 dark:lg:bg-transparent">
+            <ul class="block lg:flex lg:items-center lg:gap-7 text-sm font-semibold">
+              <li><a href="../index.html#home" class="block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Início</a></li>
+              <li><a href="../index.html#como-funciona" class="block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Como Funciona</a></li>
+              <li><a href="../index.html#planos" class="block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Planos</a></li>
+              <li><a href="../artigos/index.html" class="block py-2 text-slate-700 hover:text-primary dark:text-slate-200">Artigos</a></li>
+              <li><a href="../ferramentas/index.html" class="block py-2 text-primary font-bold">Calculadoras</a></li>
+              <li class="mt-3 lg:hidden">
+                <a href="#" data-cta="nav_mob" data-profile="Inquilino" class="block w-full text-center rounded-lg bg-primary px-4 py-2.5 text-white font-bold">Analisar Grátis</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-lg" aria-label="Alternar tema" data-web-trigger="web-theme"></button>
+
+          <a href="#" data-cta="nav" data-profile="" class="hidden sm:inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary-light-10 transition whitespace-nowrap">
+            <i class="lni lni-upload"></i> Enviar Contrato
+          </a>
+
+          <button type="button" class="ic-navbar-toggler rounded-lg border border-slate-200 dark:border-slate-700 px-2.5 py-1.5 text-xl text-slate-800 dark:text-slate-100 lg:hidden" data-web-toggle="navbar-collapse" data-web-target="navbarMenu" aria-expanded="false" aria-label="Abrir menu">
+            <i class="lni lni-menu" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <main class="main relative pt-20" role="main">
         <!-- Hero -->
-        <section class="relative overflow-hidden bg-primary text-primary-color pt-[120px] md:pt-[130px] lg:pt-[160px] pb-[80px]">
-            <div class="container relative z-10">
-                <div class="mx-auto max-w-[780px] text-center">
-                    <h1 class="mb-6 text-3xl font-bold leading-snug text-primary-color sm:text-4xl lg:text-5xl">Calculadora de Multa Rescisória</h1>
-                    <p class="text-lg opacity-90 text-primary-color">Faça o cálculo proporcional exato baseado na Lei do Inquilinato.</p>
-                </div>
-            </div>
-            <div class="absolute -left-9 bottom-0 z-0">
-                <img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" />
-            </div>
-            <div class="absolute -right-6 -top-6 z-0">
-                <img src="../img/dots.svg" class="w-[120px] opacity-75" alt="" />
-            </div>
-        </section>
+        <section class="lp-custom-hero lp-a-grid-bg relative overflow-hidden pt-12 pb-12 lg:pt-16 lg:pb-14 border-b border-slate-200/80 dark:border-slate-800 no-print" aria-label="Cabeçalho da Ferramenta">
+      <div class="container">
+        <div class="mx-auto max-w-3xl text-center">
+          <nav aria-label="Breadcrumb" class="mb-5">
+        <ol class="inline-flex flex-wrap items-center justify-center gap-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 shadow-sm">
+          <li><a href="../index.html" class="hover:text-primary">Início</a></li>
+          <li aria-hidden="true" class="text-slate-400">/</li>
+          <li><a href="../ferramentas/index.html" class="text-primary font-bold hover:underline">Calculadoras & Ferramentas</a></li>
+        </ol>
+      </nav>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+            Calculadora de Multa Rescisória
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">Faça o cálculo proporcional exato baseado na Lei do Inquilinato.</p>
+          
+        </div>
+      </div>
+    </section>
 
         <!-- Calculadora Area -->
-        <section class="section-area py-16 bg-body-light-1 dark:bg-body-dark-1">
+        <section class="section-area py-16 bg-white dark:bg-slate-950">
             <div class="container">
                 <div class="row flex-wrap lg:flex-nowrap gap-10">
 
                     <!-- Left Col: Formulario -->
                     <div class="w-full lg:w-7/12">
-                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-8 sm:p-10 border border-gray-100 dark:border-alpha-dark">
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-card-1 p-8 sm:p-10 border border-slate-200 dark:border-slate-800">
                             <h2 class="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
                                 <i class="lni lni-calculator"></i> Insira os dados do contrato
                             </h2>
@@ -128,21 +156,21 @@
                             <form id="calc-form" class="space-y-6">
                                 <!-- Valor do Aluguel -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Valor mensal do aluguel (R$)</label>
+                                    <label class="block text-sm font-semibold text-slate-600 dark:text-slate-300 mb-2">Valor mensal do aluguel (R$)</label>
                                     <div class="relative">
                                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                             <span class="text-gray-500 font-medium">R$</span>
                                         </div>
-                                        <input type="text" id="ipt-rent" class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="0,00" />
+                                        <input type="text" id="ipt-rent" class="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="0,00" />
                                     </div>
                                 </div>
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <!-- Qtd Meses Multa -->
                                     <div>
-                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Multa proporcional</label>
+                                        <label class="block text-sm font-semibold text-slate-600 dark:text-slate-300 mb-2">Multa proporcional</label>
                                         <div class="relative">
-                                            <input type="number" id="ipt-penalty-months" placeholder="Ex: 3" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
+                                            <input type="number" id="ipt-penalty-months" placeholder="Ex: 3" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
                                             <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
                                                 <span class="text-gray-500 font-medium">meses</span>
                                             </div>
@@ -151,9 +179,9 @@
 
                                     <!-- Prazo Total -->
                                     <div>
-                                        <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Prazo total em contrato</label>
+                                        <label class="block text-sm font-semibold text-slate-600 dark:text-slate-300 mb-2">Prazo total em contrato</label>
                                         <div class="relative">
-                                            <input type="number" id="ipt-total-months" placeholder="Ex: 30" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
+                                            <input type="number" id="ipt-total-months" placeholder="Ex: 30" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
                                             <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
                                                 <span class="text-gray-500 font-medium">meses</span>
                                             </div>
@@ -163,14 +191,14 @@
 
                                 <!-- Meses Cumpridos -->
                                 <div>
-                                    <label class="block text-sm font-semibold text-body-light-11 dark:text-body-dark-11 mb-2">Tempo de moradia já cumprido</label>
+                                    <label class="block text-sm font-semibold text-slate-600 dark:text-slate-300 mb-2">Tempo de moradia já cumprido</label>
                                     <div class="relative mb-1">
-                                        <input type="number" id="ipt-elapsed-months" placeholder="Ex: 12" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-body-dark-1 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
+                                        <input type="number" id="ipt-elapsed-months" placeholder="Ex: 12" class="w-full pl-4 pr-16 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-lg font-medium focus:border-primary focus:ring-1 focus:ring-primary" />
                                         <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none">
                                             <span class="text-gray-500 font-medium">meses</span>
                                         </div>
                                     </div>
-                                    <p class="text-[11px] text-body-light-9 dark:text-body-dark-9">
+                                    <p class="text-[11px] text-slate-500 dark:text-slate-400">
                                         Nota: A isenção de multa após 12 meses não é lei automática. Ela só vale se houver uma cláusula de isenção escrita no seu contrato.
                                     </p>
                                 </div>
@@ -182,7 +210,7 @@
                                     </button>
                                 </div>
                             </form>
-                            <p class="text-xs text-body-light-11 mt-4 italic"><i class="lni lni-warning"></i> Dica: O cálculo é refeito automaticamente a cada número digitado.</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-4 italic"><i class="lni lni-warning"></i> Dica: O cálculo é refeito automaticamente a cada número digitado.</p>
                         </div>
 
                         <!-- Conteúdo Didático -->
@@ -220,12 +248,12 @@
                         </div>
 
                         <!-- Hook Afiliado
-                        <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-md p-6 border-l-4 border-yellow-400">
+                        <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-md p-6 border-l-4 border-yellow-400">
                             <div class="flex gap-4">
                                 <div class="text-yellow-400 text-3xl"><i class="lni lni-coin"></i></div>
                                 <div>
                                     <h4 class="font-bold text-lg mb-2">Faltou dinheiro para a rescisão?</h4>
-                                    <p class="text-sm text-body-light-11 dark:text-body-dark-11 mb-4">Descubra as melhores taxas de crédito para limpar seu nome, pagar a multa e bancar o frete da nova mudança.</p>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">Descubra as melhores taxas de crédito para limpar seu nome, pagar a multa e bancar o frete da nova mudança.</p>
                                     <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">Simular Empréstimo sem compromisso &rarr;</a>
                                 </div>
                             </div>
@@ -242,69 +270,72 @@
     </main>
 
     <!-- Leitura Recomendada (Card layout, perfectly spaced) -->
-    <div class="w-full pb-6 bg-body-light-1 dark:bg-body-dark-1 no-print">
+    <div class="w-full pb-6 bg-white dark:bg-slate-950 no-print">
         <div class="container">
-            <div class="bg-white dark:bg-body-dark-12/10 rounded-2xl shadow-card-1 p-6 sm:p-8 border border-gray-100 dark:border-alpha-dark w-full">
-                <h3 class="text-xl font-bold mb-5 flex items-center gap-2 text-body-light-12 dark:text-body-dark-12">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-card-1 p-6 sm:p-8 border border-slate-200 dark:border-slate-800 w-full">
+                <h3 class="text-xl font-bold mb-5 flex items-center gap-2 text-slate-900 dark:text-white">
                     <i class="lni lni-library text-primary"></i> Leitura Recomendada
                 </h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
 
 
-                    <a href="../artigos/como-calcular-a-multa-rescisoria-do-aluguel.html" class="group block p-5 rounded-xl bg-body-light-1 dark:bg-body-dark-2 hover:bg-primary/5 dark:hover:bg-primary/10 border border-gray-100 dark:border-gray-700 transition-all">
-                        <h4 class="font-bold text-body-light-12 dark:text-body-dark-12 group-hover:text-primary transition-colors mb-2">Como calcular a multa rescisória do aluguel (Guia)</h4>
-                        <p class="text-sm text-body-light-11 dark:text-body-dark-11">Entenda passo a passo a regra da proporcionalidade exigida pela Lei do Inquilinato.</p>
+                    <a href="../artigos/como-calcular-a-multa-rescisoria-do-aluguel.html" class="group block p-5 rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-primary/5 dark:hover:bg-primary/10 border border-gray-100 dark:border-gray-700 transition-all">
+                        <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors mb-2">Como calcular a multa rescisória do aluguel (Guia)</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Entenda passo a passo a regra da proporcionalidade exigida pela Lei do Inquilinato.</p>
                     </a>
-                    <a href="../artigos/sair-do-aluguel-apos-12-meses-e-sem-pagar-multa.html" class="group block p-5 rounded-xl bg-body-light-1 dark:bg-body-dark-2 hover:bg-primary/5 dark:hover:bg-primary/10 border border-gray-100 dark:border-gray-700 transition-all">
-                        <h4 class="font-bold text-body-light-12 dark:text-body-dark-12 group-hover:text-primary transition-colors mb-2">Sair após 12 meses sem pagar multa</h4>
-                        <p class="text-sm text-body-light-11 dark:text-body-dark-11">Descubra como funciona a isenção de quebra de contrato antecipada.</p>
+                    <a href="../artigos/sair-do-aluguel-apos-12-meses-e-sem-pagar-multa.html" class="group block p-5 rounded-xl bg-slate-50 dark:bg-slate-800/70 hover:bg-primary/5 dark:hover:bg-primary/10 border border-gray-100 dark:border-gray-700 transition-all">
+                        <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors mb-2">Sair após 12 meses sem pagar multa</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-300">Descubra como funciona a isenção de quebra de contrato antecipada.</p>
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-primary-dark-2 text-white" role="contentinfo">
-        <center>
-            <div class="w-full pt-16 pb-6">
-                <a href="../index.html" class="inline-block mb-5" aria-label="Página Inicial">
-                    <img src="../img/logo/aluguelok-white.png" width="256" alt="Logo AluguelOK" />
-                </a>
-            </div>
-            <div class="w-full pb-16">
-                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="Facebook"><i class="lni lni-facebook-fill" aria-hidden="true"></i></a>
-                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="Twitter"><i class="lni lni-twitter-original" aria-hidden="true"></i></a>
-                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="Instagram"><i class="lni lni-instagram-original" aria-hidden="true"></i></a>
-                <a href="javascript:void(0)" class="px-3 text-body-dark-11 hover:text-primary text-[22px] leading-none" aria-label="LinkedIn"><i class="lni lni-linkedin-original" aria-hidden="true"></i></a>
-            </div>
-        </center>
-    </footer>
+    
+    <!-- CTA FINAL (Equivalente a.html) -->
+    <section class="py-14 bg-primary text-white no-print">
+      <div class="container text-center max-w-3xl">
+        <h2 class="text-2xl sm:text-3xl font-extrabold !text-white mb-3">Quer auditar o contrato inteiro em poucos segundos?</h2>
+        <p class="text-blue-100 mb-7 text-sm sm:text-base">Envie seu contrato para nossa Inteligência Artificial e receba a Pré-Análise gratuita antes de assinar.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#" data-cta="content_cta" data-profile="Inquilino" class="rounded-xl bg-white px-6 py-3.5 text-sm font-extrabold text-primary shadow-lg hover:bg-blue-50 transition">
+            Sou Inquilino — Analisar Grátis
+          </a>
+          <a href="#" data-cta="content_cta" data-profile="Proprietario" class="rounded-xl bg-slate-900 px-6 py-3.5 text-sm font-extrabold text-white shadow-lg hover:bg-slate-800 transition">
+            Sou Proprietário — Analisar Grátis
+          </a>
+        </div>
+      </div>
+    </section>
+<footer class="bg-slate-950 text-slate-300 border-t border-slate-800 no-print" role="contentinfo">
+    <div class="container py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <img src="../img/logo/aluguelok-white.png" width="160" alt="Logo AluguelOK" />
+          <span class="text-xs text-slate-400">Auditoria Jurídica &amp; Financeira de Contratos de Aluguel com IA</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm">
+          <a href="../artigos/index.html" class="hover:text-white">Artigos</a>
+          <a href="../ferramentas/index.html" class="hover:text-white">Calculadoras</a>
+          <a href="#" data-cta="footer_policy" data-profile="Policy" class="hover:text-white">Política de Privacidade</a>
+          <a href="#" data-cta="footer_help" data-profile="Help" class="hover:text-white">Central de Ajuda</a>
+        </div>
+      </div>
+      <div class="mt-8 pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-2">
+        <span>© 2026 AluguelOK. Todos os direitos reservados.</span>
+        <span>power of <a href="https://kh4os.io/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white">kh4os.io</a></span>
+      </div>
+    </div>
+  </footer>
 
     <!-- Script Principal do Site -->
     <script src="../js/main.js"></script>
 
     <!-- Script da Calculadora e Layout -->
     <script>
-                // Logica de Sticky Menu Navbar
                 document.addEventListener("DOMContentLoaded", () => {
-                    const header = document.querySelector(".ic-navbar");
-                    const logoImg = document.querySelector(".ic-navbar-logo img");
-                    const logoTopo = "../img/logo/aluguelok-white.png";
-                    const logoSticky = "../img/logo/aluguelok-blue.png";
-
-                    if (header && logoImg) {
-                        const handleMutation = (mutationsList) => {
-                            for (const mutation of mutationsList) {
-                                if (mutation.type === "attributes" && mutation.attributeName === "class") {
-                                    const isSticky = header.classList.contains("sticky");
-                                    logoImg.src = isSticky ? logoSticky : logoTopo;
-                                }
-                            }
-                        };
-                        const observer = new MutationObserver(handleMutation);
-                        observer.observe(header, { attributes: true, attributeFilter: ["class"] });
-                    }
 
                     // Mascara e Calculadora
                     const inputRent = document.getElementById('ipt-rent');
@@ -371,5 +402,6 @@
                     calculate();
                 });
     </script>
+  <script src="../js/ab-router.js"></script>
 </body>
 </html>

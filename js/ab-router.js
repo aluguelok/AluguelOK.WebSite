@@ -12,6 +12,10 @@
     APP_BASE_URL: isLocal
       ? "https://localhost:7263"
       : "https://app.aluguelok.com.br",
+    API_BASE_URL: isLocal
+      ? "https://localhost:7262"
+      : "https://api.aluguelok.com.br",
+    ASSIGN_TIMEOUT_MS: 550,
     STORAGE_KEY: "aluguelok_ab_variant",
     VARIANTS: ["A", "B", "C"],
     VARIANT_PATHS: {
@@ -35,7 +39,27 @@
     }
   }
 
-  function resolveVariant() {
+  function persistAssignedVariant(variant) {
+    try {
+      localStorage.setItem(CONFIG.STORAGE_KEY, variant);
+      document.cookie =
+        "aluguelok_ab=" +
+        variant +
+        "; path=/; max-age=2592000; SameSite=Lax";
+    } catch (e) {}
+  }
+
+  function randomFallbackVariant() {
+    var randomIndex = Math.floor(Math.random() * CONFIG.VARIANTS.length);
+    if (window.crypto && window.crypto.getRandomValues) {
+      var arr = new Uint32Array(1);
+      window.crypto.getRandomValues(arr);
+      randomIndex = arr[0] % CONFIG.VARIANTS.length;
+    }
+    return CONFIG.VARIANTS[randomIndex];
+  }
+
+  function resolveStoredOrForcedVariant() {
     var reset = getQueryParam("reset_ab");
     if (reset === "1") {
       try {
@@ -47,9 +71,7 @@
       normalizeVariant(getQueryParam("lp")) ||
       normalizeVariant(getQueryParam("variant"));
     if (forced) {
-      try {
-        localStorage.setItem(CONFIG.STORAGE_KEY, forced);
-      } catch (e) {}
+      persistAssignedVariant(forced);
       return forced;
     }
 
@@ -58,27 +80,54 @@
       stored = normalizeVariant(localStorage.getItem(CONFIG.STORAGE_KEY));
     } catch (e) {}
 
-    if (stored) {
-      return stored;
+    return stored;
+  }
+
+  function resolveVariant() {
+    var existing = resolveStoredOrForcedVariant();
+    if (existing) return existing;
+
+    var assigned = randomFallbackVariant();
+    persistAssignedVariant(assigned);
+    return assigned;
+  }
+
+  async function resolveVariantProportionalAsync() {
+    var existing = resolveStoredOrForcedVariant();
+    if (existing) return existing;
+
+    var assigned = null;
+    if (window.location.protocol !== "file:" && typeof fetch === "function") {
+      var controller =
+        typeof AbortController === "function" ? new AbortController() : null;
+      var timerId = controller
+        ? setTimeout(function () {
+            controller.abort();
+          }, CONFIG.ASSIGN_TIMEOUT_MS)
+        : null;
+
+      try {
+        var res = await fetch(CONFIG.API_BASE_URL + "/api/v1/ab/assign", {
+          method: "GET",
+          cache: "no-store",
+          signal: controller ? controller.signal : undefined,
+        });
+        if (res.ok) {
+          var data = await res.json();
+          assigned = normalizeVariant(data && data.variant);
+        }
+      } catch (e) {
+        // Fallback automático abaixo caso API esteja indisponível/timeout
+      } finally {
+        if (timerId !== null) clearTimeout(timerId);
+      }
     }
 
-    // Distribuição uniforme (33.3% / 33.3% / 33.3%) para cada novo visitante
-    var randomIndex = Math.floor(Math.random() * CONFIG.VARIANTS.length);
-    if (window.crypto && window.crypto.getRandomValues) {
-      var arr = new Uint32Array(1);
-      window.crypto.getRandomValues(arr);
-      randomIndex = arr[0] % CONFIG.VARIANTS.length;
+    if (!assigned) {
+      assigned = randomFallbackVariant();
     }
-    var assigned = CONFIG.VARIANTS[randomIndex];
 
-    try {
-      localStorage.setItem(CONFIG.STORAGE_KEY, assigned);
-      document.cookie =
-        "aluguelok_ab=" +
-        assigned +
-        "; path=/; max-age=2592000; SameSite=Lax";
-    } catch (e) {}
-
+    persistAssignedVariant(assigned);
     return assigned;
   }
 
@@ -328,6 +377,14 @@
   }
 
   function init() {
+    var pageKind = document.querySelector('meta[name="aluguelok-page-kind"]');
+    if (pageKind && pageKind.getAttribute("content") === "content") {
+      // Páginas editoriais/calculadoras: preserva variante já sorteada sem consumir slot do A/B
+      var existingVariant = resolveStoredOrForcedVariant() || "SITE";
+      bindCTAs(existingVariant);
+      return;
+    }
+
     var metaVariant = document.querySelector('meta[name="aluguelok-variant"]');
     if (metaVariant) {
       // Execução direta de lp/a.html, lp/b.html ou lp/c.html
@@ -343,9 +400,10 @@
       return;
     }
 
-    // Execução via index.html (Orquestrador A/B/C)
-    var assigned = resolveVariant();
-    mountOrchestratedVariant(assigned);
+    // Execução via index.html (Orquestrador A/B/C proporcional via API)
+    resolveVariantProportionalAsync().then(function (assigned) {
+      mountOrchestratedVariant(assigned);
+    });
   }
 
   window.AluguelOKAB = {
